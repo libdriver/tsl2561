@@ -4,7 +4,7 @@
 
 ## LibDriver TSL2561
 
-[English](/README.md) | [ 简体中文](/README_CN.md)
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
 
 The TSL2560 and TSL2561 are light-to-digital converters that transform light intensity to a digital signal output capable of
 direct IIC (TSL2561) or SMBus (TSL2560) interface. Each device combines one broadband photodiode (visible plus infrared)
@@ -164,7 +164,7 @@ Please sent an e-mail to lishifenging@outlook.com
 
 ### License
 
-Copyright (C) LibDriver 2015-2021 All rights reserved 
+Copyright (c) 2015 - present LibDriver All rights reserved
 
 
 

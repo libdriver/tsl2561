@@ -1,10 +1,12 @@
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+
 <div align=center>
 <img src="/doc/image/logo.png"/>
 </div>
 
 ## LibDriver TSL2561
 
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/tsl2561/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 TSL2560和TSL2561是數字光強轉換器，它將光強度轉換為數字信號輸出，通過IIC（TSL2561）或SMBus（TSL2560）接口進行通信。每個設備使用一個寬帶光電二極管（可見光+紅外），CMOS上的紅外響應光電二極管能夠提供20位動態範圍內的響應（16位分辨率）。兩個集成ADC採集光電二極管電流的數字輸出，每路ADC表示在每個通道上測量的輻照度。輸出可以輸入到微處理器，其中照度（環境光用經驗公式推導出以勒克斯為單位的近似人眼觀察結果。TSL2560設備允許SMB警報式中斷，TSL2561設備支持傳統的中斷直到固件清除它。雖然適用於一般用途的光傳感應用，但TSL2560/61設備是專門為顯示面板設計的（LCD、OLED等）以延長電池壽命和在不同的照明條件下提供最佳的視覺效果。顯示面板背光，其中最多可占平台總功率的40%，可自動管理。這兩種設備也是控制鍵盤基於環境照明的理想選擇。照度信息可進一步用於管理數碼相機的曝光控制。TSL2560/61設備適用於筆記本/平板電腦、液晶顯示器、平板電腦電視、手機和數碼相機。此外，其他應用包括路燈控制，安全照明，採光、機器視覺和汽車儀表組等。
 

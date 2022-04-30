@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_TSL2561_BASIC_H_
-#define _DRIVER_TSL2561_BASIC_H_
+#ifndef DRIVER_TSL2561_BASIC_H
+#define DRIVER_TSL2561_BASIC_H
 
 #include "driver_tsl2561_interface.h"
 
@@ -58,8 +58,8 @@ extern "C"{
 #define TSL2561_BASIC_DEFAULT_INTEGRATION_TIME         TSL2561_INTEGRATION_TIME_402MS                                 /**< 402ms integration time */
 #define TSL2561_BASIC_DEFAULT_INTERRUPT_MODE           TSL2561_INTERRUPT_MODE_15_INTEGRATION_TIME_OUT_OF_RANGE        /**< 15 integration time out of range */
 #define TSL2561_BASIC_DEFAULT_INTERRUPT                TSL2561_BOOL_FALSE                                             /**< disable interrupt */
-#define TSL2561_BASIC_DEFAULT_INTERRUPT_HIGH_THRESHOLD 0xFFFF                                                         /**< high threshold */
-#define TSL2561_BASIC_DEFAULT_INTERRUPT_LOW_THRESHOLD  0x0000                                                         /**< low threshold */
+#define TSL2561_BASIC_DEFAULT_INTERRUPT_HIGH_THRESHOLD 0xFFFFU                                                        /**< high threshold */
+#define TSL2561_BASIC_DEFAULT_INTERRUPT_LOW_THRESHOLD  0x0000U                                                        /**< low threshold */
 
 /**
  * @brief     basic example init

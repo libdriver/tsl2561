@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_TSL2561_INTERRUPT_TEST_H_
-#define _DRIVER_TSL2561_INTERRUPT_TEST_H_
+#ifndef DRIVER_TSL2561_INTERRUPT_TEST_H
+#define DRIVER_TSL2561_INTERRUPT_TEST_H
 
 #include "driver_tsl2561_interface.h"
 

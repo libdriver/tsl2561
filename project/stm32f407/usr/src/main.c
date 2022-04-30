@@ -179,7 +179,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                 }
                 
                 /* run reg test */
-                if (tsl2561_register_test(addr))
+                if (tsl2561_register_test(addr) != 0)
                 {
                     return 1;
                 }
@@ -233,7 +233,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                 {
                     return 5;
                 }
-                if (tsl2561_read_test(addr, atoi(argv[3])))
+                if (tsl2561_read_test(addr, atoi(argv[3])) != 0)
                 {
                     return 1;
                 }
@@ -256,10 +256,10 @@ uint8_t tsl2561(uint8_t argc, char **argv)
              /* read function */
             if (strcmp("read", argv[2]) == 0)
             {
-                volatile uint8_t res;
-                volatile uint32_t times;
-                volatile uint32_t i;
-                volatile uint32_t lux;
+                uint8_t res;
+                uint32_t times;
+                uint32_t i;
+                uint32_t lux;
                 tsl2561_address_t addr;
                 
                 /* check iic address */
@@ -284,25 +284,25 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                     return 5;
                 }
                 res = tsl2561_basic_init(addr);
-                if (res)
+                if (res != 0)
                 {
                     return 1;
                 }
                 times = atoi(argv[3]);
-                for (i=0; i<times; i++)
+                for (i = 0; i < times; i++)
                 {
                     tsl2561_interface_delay_ms(1000);
                     res = tsl2561_basic_read((uint32_t *)&lux);
-                    if (res)
+                    if (res != 0)
                     {
-                        tsl2561_basic_deinit();
+                        (void)tsl2561_basic_deinit();
                         
                         return 1;
                     }
                     tsl2561_interface_debug_print("tsl2561: %d/%d.\n", (uint32_t)(i+1), (uint32_t)times);
                     tsl2561_interface_debug_print("tsl2561: read is %d lux.\n", lux);
                 }
-                tsl2561_basic_deinit();
+                (void)tsl2561_basic_deinit();
                 
                 return 0;
             }
@@ -328,10 +328,8 @@ uint8_t tsl2561(uint8_t argc, char **argv)
              /* read test */
             if (strcmp("int", argv[2]) == 0)
             {
-                volatile uint8_t res;
-                volatile uint32_t i;
-                volatile uint32_t times;
-                volatile uint32_t lux;
+                uint8_t res;
+                uint32_t times;
                 tsl2561_address_t addr;
                 tsl2561_interrupt_mode_t mode;
                 
@@ -455,18 +453,18 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                 times = atoi(argv[3]);
 
                 res = gpio_interrupt_init();
-                if (res)
+                if (res != 0)
                 {
                     return 1;
                 }
-                res = tsl2561_interrupt_test(addr, mode, atoi(argv[9]), atoi(argv[10]), times);
-                if (res)
+                res = tsl2561_interrupt_test(addr, mode, (uint16_t)atoi(argv[9]), (uint16_t)atoi(argv[10]), times);
+                if (res != 0)
                 {
-                    gpio_interrupt_deinit();
+                    (void)gpio_interrupt_deinit();
                     
                     return 1;
                 }
-                gpio_interrupt_deinit();
+                (void)gpio_interrupt_deinit();
                 
                 return 0;
             }
@@ -484,10 +482,10 @@ uint8_t tsl2561(uint8_t argc, char **argv)
              /* read function */
             if (strcmp("int", argv[2]) == 0)
             {
-                volatile uint8_t res;
-                volatile uint32_t i;
-                volatile uint32_t times;
-                volatile uint32_t lux;
+                uint8_t res;
+                uint32_t i;
+                uint32_t times;
+                uint32_t lux;
                 tsl2561_address_t addr;
                 tsl2561_interrupt_mode_t mode;
                 
@@ -609,28 +607,28 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                     return 5;
                 }
                 times = atoi(argv[3]);
-                res = tsl2561_interrupt_init(addr, mode, atoi(argv[9]), atoi(argv[10]));
-                if (res)
+                res = tsl2561_interrupt_init(addr, mode, (uint16_t)atoi(argv[9]), (uint16_t)atoi(argv[10]));
+                if (res != 0)
                 {
                     return 1;
                 }
                 res = gpio_interrupt_init();
-                if (res)
+                if (res != 0)
                 {
-                    tsl2561_interrupt_deinit();
+                    (void)tsl2561_interrupt_deinit();
                     
                     return 1;
                 }
                 g_flag = 0;
-                for (i=0; i<times; i++)
+                for (i = 0; i < times; i++)
                 {
                     /* read data */
                     tsl2561_interface_delay_ms(1000);
                     res = tsl2561_interrupt_read((uint32_t *)&lux);
-                    if (res)
+                    if (res != 0)
                     {
-                        tsl2561_interrupt_deinit();
-                        gpio_interrupt_deinit();
+                        (void)tsl2561_interrupt_deinit();
+                        (void)gpio_interrupt_deinit();
                         
                         return 1;
                     }
@@ -638,7 +636,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                     tsl2561_interface_debug_print("tsl2561: read is %d lux.\n", lux);
 
                     /* check interrupt */
-                    if (g_flag)
+                    if (g_flag != 0)
                     {
                         tsl2561_interface_debug_print("tsl2561: find interrupt.\n");
                         
@@ -646,8 +644,8 @@ uint8_t tsl2561(uint8_t argc, char **argv)
                     }
                     
                 }
-                tsl2561_interrupt_deinit();
-                gpio_interrupt_deinit();
+                (void)tsl2561_interrupt_deinit();
+                (void)gpio_interrupt_deinit();
                 
                 return 0;
             }
@@ -679,7 +677,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
  */
 int main(void)
 {
-    volatile uint8_t res;
+    uint8_t res;
     
     /* stm32f407 clock init and hal init */
     clock_init();

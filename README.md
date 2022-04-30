@@ -1,4 +1,4 @@
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md) | [日本語](/README_ja.md) | [Deutsch](/README_de.md) | [한국어](/README_ko.md)
 
 <div align=center>
 <img src="/doc/image/logo.png"/>
@@ -6,15 +6,11 @@
 
 ## LibDriver TSL2561
 
-[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/tsl2561/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
+[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/tsl2561/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
-The TSL2560 and TSL2561 are light-to-digital converters that transform light intensity to a digital signal output capable of
-direct IIC (TSL2561) or SMBus (TSL2560) interface. Each device combines one broadband photodiode (visible plus infrared)
-and one infrared-responding photodiode on a single CMOS integrated circuit capable of providing a near-photopic response over an effective 20-bit dynamic range (16-bit resolution). Two integrating ADCs convert the photodiode currents to a digital output that represents the irradiance measured on each channel. This digital output can be input to a microprocessor where illuminance (ambient light level) in lux is derived using an empirical formula to approximate the human eye response. The TSL2560 device
-permits an SMB-Alert style interrupt, and the TSL2561 device supports a traditional level style interrupt that remains asserted
-until the firmware clears it. While useful for general purpose light sensing applications, the TSL2560/61 devices are designed particularly for display panels(LCD, OLED, etc.) with the purpose of extending battery life and providing optimum viewing in diverse lighting conditions. Display panel backlighting, which can account for up to 30 to 40 percent of total platform power, can be automatically managed. Both devices are also ideal for controlling keyboard illumination based upon ambient lighting conditions. Illuminance information can further be used to manage exposure control in digital cameras. The TSL2560/61 devices are ideal in notebook/tablet PCs, LCD monitors, flat-panel televisions, cell phones, and digital cameras. In addition, other applications include street light control, security lighting, sunlight harvesting, machine vision, and automotive instrumentation clusters.
+The TSL2560 and TSL2561 are light-to-digital converters that transform light intensity to a digital signal output capable of direct IIC (TSL2561) or SMBus (TSL2560) interface. Each device combines one broadband photodiode (visible plus infrared) and one infrared-responding photodiode on a single CMOS integrated circuit capable of providing a near-photopic response over an effective 20-bit dynamic range (16-bit resolution). Two integrating ADCs convert the photodiode currents to a digital output that represents the irradiance measured on each channel. This digital output can be input to a microprocessor where illuminance (ambient light level) in lux is derived using an empirical formula to approximate the human eye response. The TSL2560 device permits an SMB-Alert style interrupt, and the TSL2561 device supports a traditional level style interrupt that remains asserted until the firmware clears it. While useful for general purpose light sensing applications, the TSL2560/61 devices are designed particularly for display panels(LCD, OLED, etc.) with the purpose of extending battery life and providing optimum viewing in diverse lighting conditions. Display panel backlighting, which can account for up to 30 to 40 percent of total platform power, can be automatically managed. Both devices are also ideal for controlling keyboard illumination based upon ambient lighting conditions. Illuminance information can further be used to manage exposure control in digital cameras. The TSL2560/61 devices are ideal in notebook/tablet PCs, LCD monitors, flat-panel televisions, cell phones, and digital cameras. In addition, other applications include street light control, security lighting, sunlight harvesting, machine vision, and automotive instrumentation clusters.
 
-LibDriver TSL2561 is the TSL2561 full function driver launched by LibDriver.It provides brightness reading, brightness interrupt detection and other functions.
+LibDriver TSL2561 is the TSL2561 full function driver launched by LibDriver.It provides brightness reading, brightness interrupt detection and other functions. LibDriver is MISRA compliant.
 
 ### Table of Contents
 
@@ -60,7 +56,7 @@ uint8_t i;
 uint32_t lux;
 
 res = tsl2561_basic_init(TSL2561_ADDRESS_FLOAT);
-if (res)
+if (res != 0)
 {
     return 1;
 }
@@ -71,9 +67,9 @@ for (i = 0; i < 3; i++)
 {
     tsl2561_interface_delay_ms(1000);
     res = tsl2561_basic_read((uint32_t *)&lux);
-    if (res)
+    if (res != 0)
     {
-        tsl2561_basic_deinit();
+        (void)tsl2561_basic_deinit();
 
         return 1;
     }
@@ -85,7 +81,7 @@ for (i = 0; i < 3; i++)
 
 ...
 
-tsl2561_basic_deinit();
+(void)tsl2561_basic_deinit();
 
 return 0;
 ```
@@ -104,14 +100,14 @@ void gpio_irq(void)
 }
 
 res = tsl2561_interrupt_init(TSL2561_ADDRESS_FLOAT, TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE, 10, 100);
-if (res)
+if (res != 0)
 {
     return 1;
 }
 res = gpio_interrupt_init();
-if (res)
+if (res != 0)
 {
-    tsl2561_interrupt_deinit();
+    (void)tsl2561_interrupt_deinit();
 
     return 1;
 }
@@ -123,10 +119,10 @@ for (i = 0; i < 3; i++)
 {
     tsl2561_interface_delay_ms(1000);
     res = tsl2561_interrupt_read((uint32_t *)&lux);
-    if (res)
+    if (res != 0)
     {
-        tsl2561_interrupt_deinit();
-        gpio_interrupt_deinit();
+        (void)tsl2561_interrupt_deinit();
+        (void)gpio_interrupt_deinit();
 
         return 1;
     }
@@ -135,7 +131,7 @@ for (i = 0; i < 3; i++)
 
     ...
     
-    if (g_flag)
+    if (g_flag != 0)
     {
         tsl2561_interface_debug_print("tsl2561: find interrupt.\n");
 
@@ -148,8 +144,8 @@ for (i = 0; i < 3; i++)
 
 ...
 
-tsl2561_interrupt_deinit();
-gpio_interrupt_deinit();
+(void)tsl2561_interrupt_deinit();
+(void)gpio_interrupt_deinit();
 
 return 0;
 ```

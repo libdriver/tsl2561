@@ -73,56 +73,56 @@
 #define TSL2561_LUX_LUXSCALE             14            /**< scale by 2^14 */
 #define TSL2561_LUX_RATIOSCALE           9             /**< scale ratio by 2^9 */
 #define TSL2561_LUX_CHSCALE              10            /**< scale channel values by 2^10 */
-#define TSL2561_LUX_CHSCALE_TINT0        0x7517        /**< 322/11 * 2^TSL2561_LUX_CHSCALE */
-#define TSL2561_LUX_CHSCALE_TINT1        0x0FE7        /**< 322/81 * 2^TSL2561_LUX_CHSCALE */
-#define TSL2561_LUX_K1T                  0x0040        /**< 0.125 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B1T                  0x01F2        /**< 0.0304 * 2^LUX_SCALE */
-#define TSL2561_LUX_M1T                  0x01BE        /**< 0.0272 * 2^LUX_SCALE */
-#define TSL2561_LUX_K2T                  0x0080        /**< 0.250 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B2T                  0x0214        /**< 0.0325 * 2^LUX_SCALE */
-#define TSL2561_LUX_M2T                  0x02D1        /**< 0.0440 * 2^LUX_SCALE */
-#define TSL2561_LUX_K3T                  0x00C0        /**< 0.375 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B3T                  0x023F        /**< 0.0351 * 2^LUX_SCALE */
-#define TSL2561_LUX_M3T                  0x037B        /**< 0.0544 * 2^LUX_SCALE */
-#define TSL2561_LUX_K4T                  0x0100        /**< 0.50 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B4T                  0x0270        /**< 0.0381 * 2^LUX_SCALE */
-#define TSL2561_LUX_M4T                  0x03FE        /**< 0.0624 * 2^LUX_SCALE */
-#define TSL2561_LUX_K5T                  0x0138        /**< 0.61 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B5T                  0x016F        /**< 0.0224 * 2^LUX_SCALE */
-#define TSL2561_LUX_M5T                  0x01FC        /**< 0.0310 * 2^LUX_SCALE */
-#define TSL2561_LUX_K6T                  0x019A        /**< 0.80 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B6T                  0x00D2        /**< 0.0128 * 2^LUX_SCALE */
-#define TSL2561_LUX_M6T                  0x00FB        /**< 0.0153 * 2^LUX_SCALE */
-#define TSL2561_LUX_K7T                  0x029A        /**< 1.3 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B7T                  0x0018        /**< 0.00146 * 2^LUX_SCALE */
-#define TSL2561_LUX_M7T                  0x0012        /**< 0.00112 * 2^LUX_SCALE */
-#define TSL2561_LUX_K8T                  0x029A        /**< 1.3 * 2^RATIO_SCALE */
-#define TSL2561_LUX_B8T                  0x0000        /**< 0.000 * 2^LUX_SCALE */
-#define TSL2561_LUX_M8T                  0x0000        /**< 0.000 * 2^LUX_SCALE */
+#define TSL2561_LUX_CHSCALE_TINT0        0x7517U       /**< 322/11 * 2^TSL2561_LUX_CHSCALE */
+#define TSL2561_LUX_CHSCALE_TINT1        0x0FE7U       /**< 322/81 * 2^TSL2561_LUX_CHSCALE */
+#define TSL2561_LUX_K1T                  0x0040U       /**< 0.125 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B1T                  0x01F2U       /**< 0.0304 * 2^LUX_SCALE */
+#define TSL2561_LUX_M1T                  0x01BEU       /**< 0.0272 * 2^LUX_SCALE */
+#define TSL2561_LUX_K2T                  0x0080U       /**< 0.250 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B2T                  0x0214U       /**< 0.0325 * 2^LUX_SCALE */
+#define TSL2561_LUX_M2T                  0x02D1U       /**< 0.0440 * 2^LUX_SCALE */
+#define TSL2561_LUX_K3T                  0x00C0U       /**< 0.375 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B3T                  0x023FU       /**< 0.0351 * 2^LUX_SCALE */
+#define TSL2561_LUX_M3T                  0x037BU       /**< 0.0544 * 2^LUX_SCALE */
+#define TSL2561_LUX_K4T                  0x0100U       /**< 0.50 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B4T                  0x0270U       /**< 0.0381 * 2^LUX_SCALE */
+#define TSL2561_LUX_M4T                  0x03FEU       /**< 0.0624 * 2^LUX_SCALE */
+#define TSL2561_LUX_K5T                  0x0138U       /**< 0.61 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B5T                  0x016FU       /**< 0.0224 * 2^LUX_SCALE */
+#define TSL2561_LUX_M5T                  0x01FCU       /**< 0.0310 * 2^LUX_SCALE */
+#define TSL2561_LUX_K6T                  0x019AU       /**< 0.80 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B6T                  0x00D2U       /**< 0.0128 * 2^LUX_SCALE */
+#define TSL2561_LUX_M6T                  0x00FBU       /**< 0.0153 * 2^LUX_SCALE */
+#define TSL2561_LUX_K7T                  0x029AU       /**< 1.3 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B7T                  0x0018U       /**< 0.00146 * 2^LUX_SCALE */
+#define TSL2561_LUX_M7T                  0x0012U       /**< 0.00112 * 2^LUX_SCALE */
+#define TSL2561_LUX_K8T                  0x029AU       /**< 1.3 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B8T                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
+#define TSL2561_LUX_M8T                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
 #define TSL2561_GAIN_0X                  0x00          /**< gain 0x */
 #define TSL2561_GAIN_16X                 0x10          /**< gain 16x */
 
 /**
  * @brief     calculate the lux
  * @param[in] gain is the adc gain
- * @param[in] time is the integration time
+ * @param[in] t is the integration time
  * @param[in] ch0 is the channel 0 raw data
  * @param[in] ch1 is the channel 1 raw data
  * @return    calculated lux
  * @note      none
  */
-static uint32_t _tsl2561_calculate_lux(uint16_t gain, uint16_t time, uint16_t ch0, uint16_t ch1)
+static uint32_t a_tsl2561_calculate_lux(uint16_t gain, uint16_t t, uint16_t ch0, uint16_t ch1)
 {
-    volatile uint32_t ch_scale;
-    volatile uint32_t channel_1;
-    volatile uint32_t channel_0;
-    volatile uint32_t temp;
-    volatile uint32_t ratio1 = 0;
-    volatile uint32_t ratio;
-    volatile uint32_t lux;
-    volatile uint16_t b,m;
+    uint32_t ch_scale;
+    uint32_t channel_1;
+    uint32_t channel_0;
+    uint32_t temp;
+    uint32_t ratio1 = 0;
+    uint32_t ratio;
+    uint32_t lux;
+    uint16_t b,m;
     
-    switch (time)                                                            /* choose integration time */
+    switch (t)                                                               /* choose integration time */
     {
         case 0 : 
         {
@@ -189,7 +189,7 @@ static uint32_t _tsl2561_calculate_lux(uint16_t gain, uint16_t time, uint16_t ch
         b = TSL2561_LUX_B7T;                                                 /* set B7T */
         m = TSL2561_LUX_M7T;                                                 /* set M7T */
     }
-    else if (ratio > TSL2561_LUX_K8T)                                        /* if K8T */
+    else                                                                     /* if K8T */
     {
         b = TSL2561_LUX_B8T;                                                 /* set B8T */
         m = TSL2561_LUX_M8T;                                                 /* set M8T */
@@ -213,7 +213,7 @@ static uint32_t _tsl2561_calculate_lux(uint16_t gain, uint16_t time, uint16_t ch
  */
 uint8_t tsl2561_init(tsl2561_handle_t *handle)
 {
-    volatile uint8_t res, id;
+    uint8_t res, id;
     
     if (handle == NULL)                                                                 /* check handle */
     {
@@ -254,31 +254,31 @@ uint8_t tsl2561_init(tsl2561_handle_t *handle)
         return 3;                                                                       /* return error */
     }
     
-    if (handle->iic_init())                                                             /* iic init */
+    if (handle->iic_init() != 0)                                                        /* iic init */
     {
         handle->debug_print("tsl2561: iic init failed.\n");                             /* iic init failed */
         
         return 1;                                                                       /* return error */
     }
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_ID, (uint8_t *)&id, 1);        /* read id */
-    if (res)
+    if (res != 0)                                                                       /* check the result */
     {
         handle->debug_print("tsl2561: read id failed.\n");                              /* read id failed */
-        handle->iic_deinit();                                                           /* iic deinit */
+        (void)handle->iic_deinit();                                                     /* iic deinit */
         
         return 1;                                                                       /* return error */
     }
     if (id == 0x10)                                                                     /* check id */
     {
         handle->debug_print("tsl2561: not support this series.\n");                     /* not support this series */
-        handle->iic_deinit();                                                           /* iic deinit */
+        (void)handle->iic_deinit();                                                     /* iic deinit */
         
         return 1;                                                                       /* return error */
     }
     if (id != 0x50)                                                                     /* check id */
     {
         handle->debug_print("tsl2561: id is error.\n");                                 /* id is error */
-        handle->iic_deinit();                                                           /* iic deinit */
+        (void)handle->iic_deinit();                                                     /* iic deinit */
         
         return 1;                                                                       /* return error */
     }
@@ -299,7 +299,7 @@ uint8_t tsl2561_init(tsl2561_handle_t *handle)
  */
 uint8_t tsl2561_deinit(tsl2561_handle_t *handle)
 {
-    volatile uint8_t reg;
+    uint8_t reg;
     
     if (handle == NULL)                                                                      /* check handle */
     {
@@ -311,13 +311,13 @@ uint8_t tsl2561_deinit(tsl2561_handle_t *handle)
     }   
     
     reg = TSL2561_CONTROL_POWEROFF;                                                          /* set power down command */
-    if (handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1))        /* power down */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1) != 0)   /* power down */
     {
         handle->debug_print("tsl2561: power down failed.\n");                                /* power down failed */
         
         return 1;                                                                            /* return error */
     }
-    if (handle->iic_deinit())                                                                /* iic deinit */
+    if (handle->iic_deinit() != 0)                                                           /* iic deinit */
     {
         handle->debug_print("tsl2561: iic deinit failed.\n");                                /* iic deinit failed */
         
@@ -340,14 +340,14 @@ uint8_t tsl2561_deinit(tsl2561_handle_t *handle)
  */
 uint8_t tsl2561_set_addr_pin(tsl2561_handle_t *handle, tsl2561_address_t addr_pin)
 {
-    if (handle == NULL)                 /* check handle */
+    if (handle == NULL)                          /* check handle */
     {
-        return 2;                       /* return error */
+        return 2;                                /* return error */
     }
     
-    handle->iic_addr = addr_pin;        /* set iic address */
+    handle->iic_addr = (uint8_t)addr_pin;        /* set iic address */
     
-    return 0;                           /* success return 0 */
+    return 0;                                    /* success return 0 */
 }
 
 /**
@@ -387,8 +387,8 @@ uint8_t tsl2561_get_addr_pin(tsl2561_handle_t *handle, tsl2561_address_t *addr_p
  */
 uint8_t tsl2561_read(tsl2561_handle_t *handle, uint16_t *channel_0_raw, uint16_t *channel_1_raw, uint32_t *lux)
 {
-    volatile uint8_t prev;
-    volatile uint8_t buf[2];
+    uint8_t prev;
+    uint8_t buf[2];
     
     if (handle == NULL)                                                                                    /* check handle */
     {
@@ -399,27 +399,29 @@ uint8_t tsl2561_read(tsl2561_handle_t *handle, uint16_t *channel_0_raw, uint16_t
         return 3;                                                                                          /* return error */
     }
     
-    if (handle->iic_read(handle->iic_addr, TSL2561_REG_DATA0LOW, (uint8_t *)buf, 2))                       /* read data0 low */
+    memset(buf, 0, sizeof(uint8_t) * 2);                                                                   /* clear the buffer */
+    if (handle->iic_read(handle->iic_addr, TSL2561_REG_DATA0LOW, (uint8_t *)buf, 2) != 0)                  /* read data0 low */
     {
         handle->debug_print("tsl2561: read failed.\n");                                                    /* read failed */
        
         return 1;                                                                                          /* return error */
     }
     *channel_0_raw = ((uint16_t)buf[1] << 8) | buf[0];                                                     /* get channel 0 */
-    if (handle->iic_read(handle->iic_addr, TSL2561_REG_DATA1LOW, (uint8_t *)buf, 2))                       /* read data1 low */
+    memset(buf, 0, sizeof(uint8_t) * 2);                                                                   /* clear the buffer */
+    if (handle->iic_read(handle->iic_addr, TSL2561_REG_DATA1LOW, (uint8_t *)buf, 2) != 0)                  /* read data1 low */
     {
         handle->debug_print("tsl2561: read failed.\n");                                                    /* read failed */
        
         return 1;                                                                                          /* return error */
     }
     *channel_1_raw = ((uint16_t)buf[1] << 8) | buf[0];                                                     /* get channel 1 */
-    if (handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1))                       /* read data */
+    if (handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1) != 0)                  /* read data */
     {
         handle->debug_print("tsl2561: read failed.\n");                                                    /* read failed */
         
         return 1;                                                                                          /* return error */
     }
-    *lux = _tsl2561_calculate_lux((prev & 0x10) >> 4, prev & 0x03, *channel_0_raw, *channel_1_raw);        /* calculate lux */
+    *lux = a_tsl2561_calculate_lux((prev & 0x10) >> 4, prev & 0x03, *channel_0_raw, *channel_1_raw);       /* calculate lux */
     
     return 0;                                                                                              /* success return 0 */
 }
@@ -436,7 +438,7 @@ uint8_t tsl2561_read(tsl2561_handle_t *handle, uint16_t *channel_0_raw, uint16_t
  */
 uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                         /* check handle */
     {
@@ -448,7 +450,7 @@ uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain)
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);          /* read timing */
-    if (res)                                                                                    /* check result */
+    if (res != 0)                                                                               /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                         /* read timing failed */
         
@@ -456,8 +458,16 @@ uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain)
     }
     prev &= 0xEF;                                                                               /* clear gain bit */
     prev |= gain << 4;                                                                          /* set gain */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);        /* write command */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1) != 0)      /* write command */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                        /* write failed */
+        
+        return 1;                                                                               /* return error */
+    }
+    else
+    {
+        return 0;                                                                               /* success return 0 */
+    }
 }
 
 /**
@@ -472,7 +482,7 @@ uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain)
  */
 uint8_t tsl2561_get_gain(tsl2561_handle_t *handle, tsl2561_gain_t *gain)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                       /* check handle */
     {
@@ -484,7 +494,7 @@ uint8_t tsl2561_get_gain(tsl2561_handle_t *handle, tsl2561_gain_t *gain)
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);        /* read timing */
-    if (res)                                                                                  /* check result */
+    if (res != 0)                                                                             /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                       /* read failed */
         
@@ -499,16 +509,16 @@ uint8_t tsl2561_get_gain(tsl2561_handle_t *handle, tsl2561_gain_t *gain)
 /**
  * @brief     set the integration time
  * @param[in] *handle points to a tsl2561 handle structure
- * @param[in] time is the integration time
+ * @param[in] t is the integration time
  * @return    status code
  *            - 0 success
  *            - 1 set integration time failed
  *            - 2 handle is NULL
  * @note      none
  */
-uint8_t tsl2561_set_integration_time(tsl2561_handle_t *handle, tsl2561_integration_time_t time)
+uint8_t tsl2561_set_integration_time(tsl2561_handle_t *handle, tsl2561_integration_time_t t)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                         /* check handle */
     {
@@ -520,31 +530,39 @@ uint8_t tsl2561_set_integration_time(tsl2561_handle_t *handle, tsl2561_integrati
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);          /* read timing */
-    if (res)                                                                                    /* check result */
+    if (res != 0)                                                                               /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                         /* read failed */
        
         return 1;                                                                               /* return error */
     }
     prev &= ~0x03;                                                                              /* clear integration time bits */
-    prev |= time;                                                                               /* set integration bits */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);        /* write config */
+    prev |= t;                                                                                  /* set integration bits */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1) != 0)      /* write config */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                        /* write failed */
+        
+        return 1;                                                                               /* return error */
+    }
+    else
+    {
+        return 0;                                                                               /* success return 0 */
+    }
 }
 
 /**
  * @brief      get the integration time
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *time points to a integration time buffer
+ * @param[out] *t points to a integration time buffer
  * @return     status code
  *             - 0 success
  *             - 1 get integration time failed
  *             - 2 handle is NULL
  * @note       none
  */
-uint8_t tsl2561_get_integration_time(tsl2561_handle_t *handle, tsl2561_integration_time_t *time)
+uint8_t tsl2561_get_integration_time(tsl2561_handle_t *handle, tsl2561_integration_time_t *t)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                       /* check handle */
     {
@@ -556,14 +574,14 @@ uint8_t tsl2561_get_integration_time(tsl2561_handle_t *handle, tsl2561_integrati
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_TIMING, (uint8_t *)&prev, 1);        /* read timing */
-    if (res)                                                                                  /* check result */
+    if (res != 0)                                                                             /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                       /* read failed */
         
         return 1;                                                                             /* return error */
     }
     prev &= 0x03;                                                                             /* get integration time bits */
-    *time = (tsl2561_integration_time_t)prev;                                                 /* get integration time */
+    *t = (tsl2561_integration_time_t)prev;                                                    /* get integration time */
     
     return 0;                                                                                 /* success return 0 */
 }
@@ -580,7 +598,7 @@ uint8_t tsl2561_get_integration_time(tsl2561_handle_t *handle, tsl2561_integrati
  */
 uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_mode_t mode)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                            /* check handle */
     {
@@ -592,7 +610,7 @@ uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);          /* read interrupt reg */
-    if (res)                                                                                       /* check result */
+    if (res != 0)                                                                                  /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                            /* read failed */
        
@@ -600,8 +618,16 @@ uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
     }
     prev &= ~0x0F;                                                                                 /* clear mode */
     prev |= mode;                                                                                  /* set mode */
-
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);        /* write interrupt config */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1) != 0)      /* write interrupt config */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                           /* write failed */
+        
+        return 1;                                                                                  /* return error */
+    }
+    else
+    {
+        return 0;                                                                                  /* success return 0 */
+    }
 }
 
 /**
@@ -616,7 +642,7 @@ uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
  */
 uint8_t tsl2561_get_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_mode_t *mode)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                          /* check handle */
     {
@@ -628,7 +654,7 @@ uint8_t tsl2561_get_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);        /* read interrupt */
-    if (res)                                                                                     /* check result */
+    if (res != 0)                                                                                /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                          /* read interrupt failed */
         
@@ -652,7 +678,7 @@ uint8_t tsl2561_get_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
  */
 uint8_t tsl2561_set_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t enable)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                            /* check handle */
     {
@@ -664,7 +690,7 @@ uint8_t tsl2561_set_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t enable)
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);          /* read interrupt */
-    if (res)                                                                                       /* check result */
+    if (res != 0)                                                                                  /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                            /* read interrupt failed */
         
@@ -672,8 +698,16 @@ uint8_t tsl2561_set_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t enable)
     }
     prev &= ~0x30;                                                                                 /* clear interrupt bit */
     prev |= enable << 4;                                                                           /* set interrupt */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);        /* write interrupt config */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1) != 0)      /* write interrupt config */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                           /* write failed */
+        
+        return 1;                                                                                  /* return error */
+    }
+    else
+    {
+        return 0;                                                                                  /* success return 0 */
+    }
 }
 
 /**
@@ -688,7 +722,7 @@ uint8_t tsl2561_set_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t enable)
  */
 uint8_t tsl2561_get_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t *enable)
 {
-    volatile uint8_t res, prev;
+    uint8_t res, prev;
     
     if (handle == NULL)                                                                          /* check handle */
     {
@@ -700,7 +734,7 @@ uint8_t tsl2561_get_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t *enable)
     }
     
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_INTERRUPT, (uint8_t *)&prev, 1);        /* read interrupt */
-    if (res)                                                                                     /* check result */
+    if (res != 0)                                                                                /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                          /* read interrupt failed */
         
@@ -724,7 +758,7 @@ uint8_t tsl2561_get_interrupt(tsl2561_handle_t *handle, tsl2561_bool_t *enable)
  */
 uint8_t tsl2561_set_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t ch0_raw)
 {
-    volatile uint8_t buf[2];
+    uint8_t buf[2];
     
     if (handle == NULL)                                                                              /* check handle */
     {
@@ -737,8 +771,16 @@ uint8_t tsl2561_set_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t 
     
     buf[0] = ch0_raw & 0xFF;                                                                         /* set ch0 raw LSB */
     buf[1] = (ch0_raw >> 8) & 0xFF;                                                                  /* set ch0 raw MSB */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_THRESHHIGHLOW, (uint8_t *)buf, 2);        /* write config */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_THRESHHIGHLOW, (uint8_t *)buf, 2) != 0)      /* write config */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                             /* write failed */
+        
+        return 1;                                                                                    /* return error */
+    }
+    else
+    {
+        return 0;                                                                                    /* success return 0 */
+    }
 }
 
 /**
@@ -753,8 +795,8 @@ uint8_t tsl2561_set_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t 
  */
 uint8_t tsl2561_get_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t *ch0_raw)
 {
-    volatile uint8_t res;
-    volatile uint8_t buf[2];
+    uint8_t res;
+    uint8_t buf[2];
     
     if (handle == NULL)                                                                            /* check handle */
     {
@@ -765,7 +807,14 @@ uint8_t tsl2561_get_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t 
         return 3;                                                                                  /* return error */
     }
     
+    memset(buf, 0, sizeof(uint8_t) * 2);                                                           /* clear the buffer */
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_THRESHHIGHLOW, (uint8_t *)buf, 2);        /* read config */
+    if (res != 0)                                                                                  /*check the result */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                           /* write failed */
+        
+        return 1;                                                                                  /* return error */
+    }
     *ch0_raw = ((uint16_t)buf[1] << 8) | buf[0];                                                   /* get ch0 raw */
     
     return 0;                                                                                      /* success return 0 */
@@ -783,7 +832,7 @@ uint8_t tsl2561_get_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t 
  */
 uint8_t tsl2561_set_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t ch0_raw)
 {
-    volatile uint8_t buf[2];
+    uint8_t buf[2];
     
     if (handle == NULL)                                                                             /* check handle */
     {
@@ -796,8 +845,16 @@ uint8_t tsl2561_set_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t c
     
     buf[0] = ch0_raw & 0xFF;                                                                        /* set ch0 raw LSB */
     buf[1] = (ch0_raw >> 8) & 0xFF;                                                                 /* set ch0 raw MSB */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_THRESHLOWLOW, (uint8_t *)buf, 2);        /* write config */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_THRESHLOWLOW, (uint8_t *)buf, 2) != 0)      /* write config */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                            /* write failed */
+        
+        return 1;                                                                                   /* return error */
+    }
+    else
+    {
+        return 0;                                                                                   /* success return 0 */
+    }
 }
 
 /**
@@ -812,8 +869,8 @@ uint8_t tsl2561_set_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t c
  */
 uint8_t tsl2561_get_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t *ch0_raw)
 {
-    volatile uint8_t res;
-    volatile uint8_t buf[2];
+    uint8_t res;
+    uint8_t buf[2];
     
     if (handle == NULL)                                                                           /* check handle */
     {
@@ -824,8 +881,9 @@ uint8_t tsl2561_get_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t *
         return 3;                                                                                 /* return error */
     }
     
+    memset(buf, 0, sizeof(uint8_t) * 2);                                                          /* clear the buffer */
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_THRESHLOWLOW, (uint8_t *)buf, 2);        /* read config */
-    if (res)                                                                                      /* check result */
+    if (res != 0)                                                                                 /* check result */
     {
         handle->debug_print("tsl2561: read failed.\n");                                           /* read failed */
        
@@ -848,7 +906,7 @@ uint8_t tsl2561_get_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t *
  */
 uint8_t tsl2561_power_down(tsl2561_handle_t *handle)
 {
-    volatile uint8_t reg;
+    uint8_t reg;
  
     if (handle == NULL)                                                                         /* check handle */
     {
@@ -860,8 +918,16 @@ uint8_t tsl2561_power_down(tsl2561_handle_t *handle)
     } 
     
     reg = TSL2561_CONTROL_POWEROFF;                                                             /* set power off command */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1);        /* write control */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1) != 0)      /* write control */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                        /* write failed */
+        
+        return 1;                                                                               /* return error */
+    }
+    else
+    {
+        return 0;                                                                               /* success return 0 */
+    }
 }
 
 /**
@@ -876,7 +942,7 @@ uint8_t tsl2561_power_down(tsl2561_handle_t *handle)
  */
 uint8_t tsl2561_wake_up(tsl2561_handle_t *handle)
 {
-    volatile uint8_t reg;
+    uint8_t reg;
     
     if (handle == NULL)                                                                         /* check handle */
     {
@@ -888,8 +954,16 @@ uint8_t tsl2561_wake_up(tsl2561_handle_t *handle)
     }
     
     reg = TSL2561_CONTROL_POWERON;                                                              /* set power on command */
-    
-    return handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1);        /* write control */
+    if (handle->iic_write(handle->iic_addr, TSL2561_REG_CONTROL, (uint8_t *)&reg, 1) != 0)      /* write control */
+    {
+        handle->debug_print("tsl2561: write failed.\n");                                        /* write failed */
+        
+        return 1;                                                                               /* return error */
+    }
+    else
+    {
+        return 0;                                                                               /* success return 0 */
+    }
 }
 
 /**
@@ -916,7 +990,16 @@ uint8_t tsl2561_set_reg(tsl2561_handle_t *handle, uint8_t reg, uint8_t *buf, uin
         return 3;                                                     /* return error */
     }
     
-    return handle->iic_write(handle->iic_addr, reg, buf, len);        /* write data */
+    if (handle->iic_write(handle->iic_addr, reg, buf, len) != 0)      /* write data */
+    {
+        handle->debug_print("tsl2561: write failed.\n");              /* write failed */
+        
+        return 1;                                                     /* return error */
+    }
+    else
+    {
+        return 0;                                                     /* success return 0 */
+    }
 }
 
 /**
@@ -943,7 +1026,16 @@ uint8_t tsl2561_get_reg(tsl2561_handle_t *handle, uint8_t reg, uint8_t *buf, uin
         return 3;                                                    /* return error */
     }
     
-    return handle->iic_read(handle->iic_addr, reg, buf, len);        /* read data */
+    if (handle->iic_read(handle->iic_addr, reg, buf, len) != 0)      /* read data */
+    {
+        handle->debug_print("tsl2561: read failed.\n");              /* read failed */
+        
+        return 1;                                                    /* return error */
+    }
+    else
+    {
+        return 0;                                                    /* success return 0 */
+    }
 }
 
 /**

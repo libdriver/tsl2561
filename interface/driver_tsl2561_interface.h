@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_TSL2561_INTERFACE_H_
-#define _DRIVER_TSL2561_INTERFACE_H_
+#ifndef DRIVER_TSL2561_INTERFACE_H
+#define DRIVER_TSL2561_INTERFACE_H
 
 #include "driver_tsl2561.h"
 
@@ -105,10 +105,9 @@ void tsl2561_interface_delay_ms(uint32_t ms);
 /**
  * @brief     interface print format data
  * @param[in] fmt is the format data
- * @return    length of the send data
  * @note      none
  */
-uint16_t tsl2561_interface_debug_print(char *fmt, ...);
+void tsl2561_interface_debug_print(const char *const fmt, ...);
 
 /**
  * @}

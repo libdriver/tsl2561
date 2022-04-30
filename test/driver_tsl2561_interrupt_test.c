@@ -54,10 +54,10 @@ static tsl2561_handle_t gs_handle;        /**< tsl2561 handle */
 uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mode_t mode, 
                                uint16_t ch0_low_threshold, uint16_t ch0_high_threshold, uint32_t times)
 {
-    volatile uint8_t res; 
-    volatile uint16_t channel_0_raw;
-    volatile uint16_t channel_1_raw;
-    volatile uint32_t lux;
+    uint8_t res; 
+    uint16_t channel_0_raw;
+    uint16_t channel_1_raw;
+    uint32_t lux;
     tsl2561_info_t info;
     
     /* link interface function */
@@ -71,7 +71,7 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
 
     /* get chip information */
     res = tsl2561_info(&info);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: get info failed.\n");
        
@@ -93,7 +93,7 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
     
     /* set iic address */
     res = tsl2561_set_addr_pin(&gs_handle, addr_pin);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set addr pin failed.\n");
         
@@ -105,7 +105,7 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
     
     /* tsl2561 init */
     res = tsl2561_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: init failed.\n");
         
@@ -114,83 +114,83 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
     
     /* wake up chip */
     res = tsl2561_wake_up(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: wake up failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set gain 16 */
     res = tsl2561_set_gain(&gs_handle, TSL2561_GAIN_16);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set gain failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set integration time 101 */
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_101MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set interrupt mode */
     res = tsl2561_set_interrupt_mode(&gs_handle, mode);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt mode failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* enable interrupt */
     res = tsl2561_set_interrupt(&gs_handle, TSL2561_BOOL_TRUE);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: enable interrupt failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set high_threshold */
     res = tsl2561_set_interrupt_high_threshold(&gs_handle, ch0_high_threshold);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt high threshold failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set low threshold */
     res = tsl2561_set_interrupt_low_threshold(&gs_handle, ch0_low_threshold);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt low threshold failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
-    while (times)
+    while (times != 0)
     {
         tsl2561_interface_delay_ms(2000);
     
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -200,7 +200,7 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
 
     /* finish interrupt test */
     tsl2561_interface_debug_print("tsl2561: finish interrupt test.\n");
-    tsl2561_deinit(&gs_handle);
+    (void)tsl2561_deinit(&gs_handle);
     
     return 0;
 }

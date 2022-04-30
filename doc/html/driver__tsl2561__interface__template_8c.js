@@ -1,6 +1,6 @@
 var driver__tsl2561__interface__template_8c =
 [
-    [ "tsl2561_interface_debug_print", "group__tsl2561__interface__driver.html#ga752e748ba917a7a3b3d2f31d6b0d23d5", null ],
+    [ "tsl2561_interface_debug_print", "group__tsl2561__interface__driver.html#ga3477a0a39215d6b4fd6ef14ed3ff63ff", null ],
     [ "tsl2561_interface_delay_ms", "group__tsl2561__interface__driver.html#gaf1d2377fef3145b6c570f03465f2b208", null ],
     [ "tsl2561_interface_iic_deinit", "group__tsl2561__interface__driver.html#ga22f6bdf1fbcd3bb8fc4cd178c0acc6e4", null ],
     [ "tsl2561_interface_iic_init", "group__tsl2561__interface__driver.html#ga1a281b120ea49954f762d7b2eaff1224", null ],

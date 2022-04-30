@@ -1,7 +1,7 @@
 var group__tsl2561__base__driver =
 [
     [ "tsl2561_handle_s", "structtsl2561__handle__s.html", [
-      [ "debug_print", "structtsl2561__handle__s.html#a75f9f50c23e87e9407f9ec4e34bb42f2", null ],
+      [ "debug_print", "structtsl2561__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b", null ],
       [ "delay_ms", "structtsl2561__handle__s.html#a406c9433252b7366de417b7a60915c81", null ],
       [ "iic_addr", "structtsl2561__handle__s.html#ae4fb63dc1b166464d5da3aa753b0805a", null ],
       [ "iic_deinit", "structtsl2561__handle__s.html#af6963bbad902ca6e43942b48c07986c3", null ],
@@ -44,13 +44,13 @@ var group__tsl2561__base__driver =
     [ "tsl2561_deinit", "group__tsl2561__base__driver.html#ga28d9692abebc8d1c7c70ef8e3f4d0f5f", null ],
     [ "tsl2561_get_addr_pin", "group__tsl2561__base__driver.html#ga9a4fcf1b56dfc1e732e48b2b366c75d4", null ],
     [ "tsl2561_get_gain", "group__tsl2561__base__driver.html#gace1a8ffe903b67568b962bf3f6f73bee", null ],
-    [ "tsl2561_get_integration_time", "group__tsl2561__base__driver.html#ga6b03e26676a3c25dbdb3f48231ffa687", null ],
+    [ "tsl2561_get_integration_time", "group__tsl2561__base__driver.html#ga2d2fbb6ecd0b1b8da9d867d511abe96a", null ],
     [ "tsl2561_info", "group__tsl2561__base__driver.html#gaaa69c8839ab2afc4220189fb8117fd5d", null ],
     [ "tsl2561_init", "group__tsl2561__base__driver.html#ga84a50a0c1118ead7fadb6f76ee991ea3", null ],
     [ "tsl2561_power_down", "group__tsl2561__base__driver.html#ga2c5931d6badc7ccd1a9f2f154391da93", null ],
     [ "tsl2561_read", "group__tsl2561__base__driver.html#ga173d906891364d617b0f80c8dadf07af", null ],
     [ "tsl2561_set_addr_pin", "group__tsl2561__base__driver.html#ga6f162e88076d195caa4b2f0d8618ff57", null ],
     [ "tsl2561_set_gain", "group__tsl2561__base__driver.html#gac665a54c9db148693b8cb7ef589b2101", null ],
-    [ "tsl2561_set_integration_time", "group__tsl2561__base__driver.html#ga6ced5b239da525280ad90c006e2c485b", null ],
+    [ "tsl2561_set_integration_time", "group__tsl2561__base__driver.html#gad331206ce72a18afca3ccd60b4f43914", null ],
     [ "tsl2561_wake_up", "group__tsl2561__base__driver.html#gae080c29275c44f5496977b8553e94457", null ]
 ];

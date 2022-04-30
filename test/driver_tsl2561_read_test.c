@@ -50,11 +50,11 @@ static tsl2561_handle_t gs_handle;        /**< tsl2561 handle */
  */
 uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
 {
-    volatile uint8_t res;
-    volatile uint32_t t;
-    volatile uint16_t channel_0_raw;
-    volatile uint16_t channel_1_raw;
-    volatile uint32_t lux;
+    uint8_t res;
+    uint32_t t;
+    uint16_t channel_0_raw;
+    uint16_t channel_1_raw;
+    uint32_t lux;
     tsl2561_info_t info;
     
     /* link interface function */
@@ -68,7 +68,7 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
 
     /* get chip information */
     res = tsl2561_info(&info);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: get info failed.\n");
        
@@ -90,7 +90,7 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     
     /* set iic address */
     res = tsl2561_set_addr_pin(&gs_handle, addr_pin);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set addr pin failed.\n");
        
@@ -99,7 +99,7 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     
     /* tsl2561 init */
     res = tsl2561_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: init failed.\n");
        
@@ -108,50 +108,50 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     
     /* wake up chip */
     res = tsl2561_wake_up(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: wake up failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set interrupt_mode out of 15 times */
     res =tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_15_INTEGRATION_TIME_OUT_OF_RANGE);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt mode failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* disable interrupt */
     res = tsl2561_set_interrupt(&gs_handle, TSL2561_BOOL_FALSE);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: disable interrupt failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set interrupt high threshold 0xFFFF */
-    res = tsl2561_set_interrupt_high_threshold(&gs_handle, 0xFFFF);
-    if (res)
+    res = tsl2561_set_interrupt_high_threshold(&gs_handle, 0xFFFFU);
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt high threshold failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     
     /* set interrupt low threshold 0x0000 */
-    res = tsl2561_set_interrupt_low_threshold(&gs_handle, 0x0000);
-    if (res)
+    res = tsl2561_set_interrupt_low_threshold(&gs_handle, 0x0000U);
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set interrupt low threshold failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
@@ -160,10 +160,10 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     tsl2561_interface_debug_print("tsl2561: start read test.\n");
     tsl2561_interface_debug_print("tsl2561: set gain 1.\n");    
     res = tsl2561_set_gain(&gs_handle, TSL2561_GAIN_1);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set gain failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
@@ -171,24 +171,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 13 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 13 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_13MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t = times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
     
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -199,24 +199,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 101 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 101 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_101MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t = times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
 
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -227,24 +227,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 402 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 402 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_402MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t = times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
 
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }    
@@ -255,10 +255,10 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set gain 16 */
     tsl2561_interface_debug_print("tsl2561: set gain 16.\n");
     res = tsl2561_set_gain(&gs_handle, TSL2561_GAIN_16);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set gain failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
@@ -266,24 +266,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 13 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 13 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_13MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t = times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
 
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -294,24 +294,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 101 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 101 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_101MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t= times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
 
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -322,24 +322,24 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     /* set integration time 402 ms */
     tsl2561_interface_debug_print("tsl2561: set integration time 402 ms.\n");
     res = tsl2561_set_integration_time(&gs_handle, TSL2561_INTEGRATION_TIME_402MS);
-    if (res)
+    if (res != 0)
     {
         tsl2561_interface_debug_print("tsl2561: set integration time failed.\n");
-        tsl2561_deinit(&gs_handle);
+        (void)tsl2561_deinit(&gs_handle);
         
         return 1;
     }
     t = times;
-    while (t)
+    while (t != 0)
     {
         tsl2561_interface_delay_ms(2000);
         
         /* read data */
         res = tsl2561_read(&gs_handle, (uint16_t *)&channel_0_raw, (uint16_t *)&channel_1_raw, (uint32_t *)&lux);
-        if (res)
+        if (res != 0)
         {
             tsl2561_interface_debug_print("tsl2561: read failed.\n");
-            tsl2561_deinit(&gs_handle);
+            (void)tsl2561_deinit(&gs_handle);
             
             return 1;
         }
@@ -349,7 +349,7 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     
     /* finish read test */
     tsl2561_interface_debug_print("tsl2561: finish read test.\n");
-    tsl2561_deinit(&gs_handle);
+    (void)tsl2561_deinit(&gs_handle);
     
     return 0;                                                                                                                                     //success return 0
 }

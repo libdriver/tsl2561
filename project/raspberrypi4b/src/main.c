@@ -86,9 +86,9 @@ uint8_t tsl2561(uint8_t argc, char **argv)
         else if (strcmp("-p", argv[1]) == 0)
         {
             /* print pin connection */
-            tsl2561_interface_debug_print("tsl2561: SCL connected to GPIOB PIN8.\n");
-            tsl2561_interface_debug_print("tsl2561: SDA connected to GPIOB PIN9.\n");
-            tsl2561_interface_debug_print("tsl2561: INT connected to GPIOB PIN0.\n");
+            tsl2561_interface_debug_print("tsl2561: SCL connected to GPIO3(BCM).\n");
+            tsl2561_interface_debug_print("tsl2561: SDA connected to GPIO2(BCM).\n");
+            tsl2561_interface_debug_print("tsl2561: INT connected to GPIO17(BCM).\n");
             
             return 0;
         }

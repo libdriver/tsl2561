@@ -28,15 +28,15 @@ LibDriver TSL2561 ist der TSL2561-Vollfunktionstreiber, der von LibDriver gestar
 
 /src enthält LibDriver TSL2561-Quelldateien.
 
-/interface enthält die plattformunabhängige Vorlage LibDriver TSL2561 IIC。
+/interface enthält die plattformunabhängige Vorlage LibDriver TSL2561 IIC.
 
-/test enthält den Testcode des LibDriver TSL2561-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen。
+/test enthält den Testcode des LibDriver TSL2561-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen.
 
 /example enthält LibDriver TSL2561-Beispielcode.
 
 /doc enthält das LibDriver TSL2561-Offlinedokument.
 
-/Datenblatt enthält TSL2561-Datenblatt。
+/Datenblatt enthält TSL2561-Datenblatt.
 
 /project enthält den allgemeinen Beispielcode für Linux- und MCU-Entwicklungsboards. Alle Projekte verwenden das Shell-Skript, um den Treiber zu debuggen, und die detaillierten Anweisungen finden Sie in der README.md jedes Projekts.
 

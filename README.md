@@ -28,15 +28,15 @@ LibDriver TSL2561 is the TSL2561 full function driver launched by LibDriver.It p
 
 /src includes LibDriver TSL2561 source files.
 
-/interface includes LibDriver TSL2561 IIC platform independent template。
+/interface includes LibDriver TSL2561 IIC platform independent template.
 
-/test includes LibDriver TSL2561 driver test code and this code can test the chip necessary function simply。
+/test includes LibDriver TSL2561 driver test code and this code can test the chip necessary function simply.
 
 /example includes LibDriver TSL2561 sample code.
 
 /doc includes LibDriver TSL2561 offline document.
 
-/datasheet includes TSL2561 datasheet。
+/datasheet includes TSL2561 datasheet.
 
 /project includes the common Linux and MCU development board sample code. All projects use the shell script to debug the driver and the detail instruction can be found in each project's README.md.
 
@@ -51,6 +51,8 @@ Add /src, /interface and /example to your project.
 #### example basic
 
 ```C
+#include "driver_tsl2561_basic.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;
@@ -89,6 +91,8 @@ return 0;
 #### example interrupt
 
 ```C
+#include "driver_tsl2561_interrupt.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;

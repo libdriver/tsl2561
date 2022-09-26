@@ -1,6 +1,6 @@
-### 1. chip
+### 1. Chip
 
-#### 1.1 chip info
+#### 1.1 Chip Info
 
 chip name : STM32F407ZGT6.
 
@@ -12,23 +12,23 @@ iic pin: SCL/SDA PB8/PB9.
 
 gpio pin: INT PB0.
 
-### 2. shell
+### 2. Shell
 
-#### 2.1 shell parameter
+#### 2.1 Shell Parameter
 
-baud rate: 115200
+baud rate: 115200.
 
-data bits : 8
+data bits : 8.
 
-stop bits: 1
+stop bits: 1.
 
-parity: none
+parity: none.
 
-flow control: none
+flow control: none.
 
-### 3. tsl2561
+### 3. TSL2561
 
-#### 3.1 command Instruction
+#### 3.1 Command Instruction
 
 ​          tsl2561 is a basic command which can test all tsl2561 driver function:
 
@@ -52,7 +52,7 @@ flow control: none
 
 ​            -c int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt function. times is read times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
 
-#### 3.2 command example
+#### 3.2 Command Example
 
 ```shell
 tsl2561 -i

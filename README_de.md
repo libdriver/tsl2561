@@ -51,6 +51,8 @@ Fügen Sie /src, /interface und /example zu Ihrem Projekt hinzu.
 #### example basic
 
 ```C
+#include "driver_tsl2561_basic.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;
@@ -89,6 +91,8 @@ return 0;
 #### example interrupt
 
 ```c
+#include "driver_tsl2561_interrupt.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;

@@ -51,6 +51,8 @@ LibDriver TSL2561是LibDriver推出的TSL2561全功能驅動，該驅動提供�
 #### example basic
 
 ```C
+#include "driver_tsl2561_basic.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;
@@ -89,6 +91,8 @@ return 0;
 #### example interrupt
 
 ```C
+#include "driver_tsl2561_interrupt.h"
+
 uint8_t res;
 uint8_t i;
 uint32_t lux;

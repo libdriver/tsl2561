@@ -92,11 +92,11 @@ find_package(tsl2561 REQUIRED)
 
 ​           -t int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt test. times is test times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
 
-​            -c (read <times>  -a (VCC | GND | FLOAT) | int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>)
+​           -c (read <times>  -a (VCC | GND | FLOAT) | int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>)
 
-​            -c read <times>  -a (VCC | GND | FLOAT        run tsl2561 read function. times is read times.
+​           -c read <times>  -a (VCC | GND | FLOAT)        run tsl2561 read function. times is read times.
 
-​            -c int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt function. times is read times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
+​           -c int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt function. times is read times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
 
 #### 3.2 Command Example
 

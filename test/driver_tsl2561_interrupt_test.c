@@ -83,7 +83,7 @@ uint8_t tsl2561_interrupt_test(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
         tsl2561_interface_debug_print("tsl2561: chip is %s.\n", info.chip_name);
         tsl2561_interface_debug_print("tsl2561: manufacturer is %s.\n", info.manufacturer_name);
         tsl2561_interface_debug_print("tsl2561: interface is %s.\n", info.interface);
-        tsl2561_interface_debug_print("tsl2561: driver version is %d.%d.\n", info.driver_version/1000, (info.driver_version%1000)/100);
+        tsl2561_interface_debug_print("tsl2561: driver version is %d.%d.\n", info.driver_version / 1000, (info.driver_version % 1000) / 100);
         tsl2561_interface_debug_print("tsl2561: min supply voltage is %0.1fV.\n", info.supply_voltage_min_v);
         tsl2561_interface_debug_print("tsl2561: max supply voltage is %0.1fV.\n", info.supply_voltage_max_v);
         tsl2561_interface_debug_print("tsl2561: max current is %0.2fmA.\n", info.max_current_ma);

@@ -142,10 +142,10 @@ typedef enum
 typedef struct tsl2561_handle_s
 {
     uint8_t iic_addr;                                                                   /**< iic device address */
-    uint8_t (*iic_init)(void);                                                          /**< point to a iic_init function address */
-    uint8_t (*iic_deinit)(void);                                                        /**< point to a iic_deinit function address */
-    uint8_t (*iic_read)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);         /**< point to a iic_read function address */
-    uint8_t (*iic_write)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);        /**< point to a iic_write function address */
+    uint8_t (*iic_init)(void);                                                          /**< point to an iic_init function address */
+    uint8_t (*iic_deinit)(void);                                                        /**< point to an iic_deinit function address */
+    uint8_t (*iic_read)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);         /**< point to an iic_read function address */
+    uint8_t (*iic_write)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);        /**< point to an iic_write function address */
     void (*delay_ms)(uint32_t ms);                                                      /**< point to a delay_ms function address */
     void (*debug_print)(const char *const fmt, ...);                                    /**< point to a debug_print function address */
     uint8_t inited;                                                                     /**< inited flag */
@@ -189,7 +189,7 @@ typedef struct tsl2561_info_s
 /**
  * @brief     link iic_init function
  * @param[in] HANDLE points to a tsl2561 handle structure
- * @param[in] FUC points to a iic_init function address
+ * @param[in] FUC points to an iic_init function address
  * @note      none
  */
 #define DRIVER_TSL2561_LINK_IIC_INIT(HANDLE, FUC)    (HANDLE)->iic_init = FUC
@@ -197,7 +197,7 @@ typedef struct tsl2561_info_s
 /**
  * @brief     link iic_deinit function
  * @param[in] HANDLE points to a tsl2561 handle structure
- * @param[in] FUC points to a iic_deinit function address
+ * @param[in] FUC points to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_TSL2561_LINK_IIC_DEINIT(HANDLE, FUC)  (HANDLE)->iic_deinit = FUC
@@ -205,7 +205,7 @@ typedef struct tsl2561_info_s
 /**
  * @brief     link iic_read function
  * @param[in] HANDLE points to a tsl2561 handle structure
- * @param[in] FUC points to a iic_read function address
+ * @param[in] FUC points to an iic_read function address
  * @note      none
  */
 #define DRIVER_TSL2561_LINK_IIC_READ(HANDLE, FUC)    (HANDLE)->iic_read = FUC
@@ -213,7 +213,7 @@ typedef struct tsl2561_info_s
 /**
  * @brief     link iic_write function
  * @param[in] HANDLE points to a tsl2561 handle structure
- * @param[in] FUC points to a iic_write function address
+ * @param[in] FUC points to an iic_write function address
  * @note      none
  */
 #define DRIVER_TSL2561_LINK_IIC_WRITE(HANDLE, FUC)   (HANDLE)->iic_write = FUC
@@ -357,7 +357,7 @@ uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain);
 /**
  * @brief      get the adc gain
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *gain points to a adc gain buffer
+ * @param[out] *gain points to an adc gain buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gain failed
@@ -381,7 +381,7 @@ uint8_t tsl2561_set_integration_time(tsl2561_handle_t *handle, tsl2561_integrati
 /**
  * @brief      get the integration time
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *t points to a integration time buffer
+ * @param[out] *t points to an integration time buffer
  * @return     status code
  *             - 0 success
  *             - 1 get integration time failed
@@ -416,7 +416,7 @@ uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
 /**
  * @brief      get the interrupt mode
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *mode points to a interrupt mode buffer
+ * @param[out] *mode points to an interrupt mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt mode failed

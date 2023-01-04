@@ -2,55 +2,93 @@
 
 #### 1.1 Chip Info
 
-chip name : STM32F407ZGT6.
+Chip Name: STM32F407ZGT6.
 
-extern oscillator : 8MHz.
+Extern Oscillator: 8MHz.
 
-uart pin: TX/RX PA9/PA10.
+UART Pin: TX/RX PA9/PA10.
 
-iic pin: SCL/SDA PB8/PB9.
+IIC Pin: SCL/SDA PB8/PB9.
 
-gpio pin: INT PB0.
+GPIO Pin: INT PB0.
 
-### 2. Shell
+### 2. Development and Debugging
 
-#### 2.1 Shell Parameter
+#### 2.1 Integrated Development Environment
 
-baud rate: 115200.
+LidDriver provides both Keil and IAR integrated development environment projects.
 
-data bits : 8.
+MDK is the Keil ARM project and your Keil version must be 5 or higher.Keil ARM project needs STMicroelectronics STM32F4 Series Device Family Pack and you can download from https://www.keil.com/dd2/stmicroelectronics/stm32f407zgtx.
 
-stop bits: 1.
+EW is the IAR ARM project and your IAR version must be 9 or higher.
 
-parity: none.
+#### 2.2 Serial Port Parameter
 
-flow control: none.
+Baud Rate: 115200.
+
+Data Bits : 8.
+
+Stop Bits: 1.
+
+Parity: None.
+
+Flow Control: None.
+
+#### 2.3 Serial Port Assistant
+
+We use '\n' to wrap lines.If your serial port assistant displays exceptions (e.g. the displayed content does not divide lines), please modify the configuration of your serial port assistant or replace one that supports '\n' parsing.
 
 ### 3. TSL2561
 
 #### 3.1 Command Instruction
 
-​          tsl2561 is a basic command which can test all tsl2561 driver function:
+1. Show tsl2561 chip and driver information.
 
-​           -i        show tsl2561 chip and driver information.
+   ```shell
+   tsl2561 (-i | --information)
+   ```
 
-​           -h       show tsl2561 help.
+2. Show tsl2561 help.
 
-​           -p       show tsl2561 pin connections of the current board.
+   ```shell
+   tsl2561 (-h | --help)
+   ```
 
-​           -t (reg -a (VCC | GND | FLOAT) | read <times> -a (VCC | GND | FLOAT) | int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>)
+3. Show tsl2561 pin connections of the current board.
 
-​           -t reg -a (VCC | GND | FLOAT)        run tsl2561 register test. 
+   ```shell
+   tsl2561 (-p | --port)
+   ```
 
-​           -t read <times> -a (VCC | GND | FLOAT)        run tsl2561 read test. times is test times.
+4. Run tsl2561 register test.
 
-​           -t int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt test. times is test times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
+   ```shell
+   tsl2561 (-t reg | --test=reg) [--addr=<VCC | GND | FLOAT>]
+   ```
 
-​           -c (read <times>  -a (VCC | GND | FLOAT) | int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>)
+5. Run tsl2561 read test, num is test times.
 
-​           -c read <times>  -a (VCC | GND | FLOAT)        run tsl2561 read function. times is read times.
+   ```shell
+   tsl2561 (-t read | --test=read) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+   ```
 
-​           -c int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>        run tsl2561 interrupt function. times is read times.  mode is the interrupt mode and it can be "0"-"15". lowthreshold is interrupt low threshold. highthreshold is interrupt high threshold.
+6. Run tsl2561 interrupt test, num is test times, m is the interrupt mode and it can be "00"-"15", low is the interrupt low threshold, high is the interrupt high threshold.
+
+   ```shell
+   tsl2561 (-t int | --test=int) [--addr=<VCC | GND | FLOAT>] [--times=<num>] [--mode=<m>] [--low-threshold=<low>] [--high-threshold=<high>]
+   ```
+
+7. Run tsl2561 read function, num is read times.
+
+   ```shell
+   tsl2561 (-e read | --example=read) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+   ```
+
+8. Run tsl2561 interrupt function, num is read times, m is the interrupt mode and it can be "00"-"15", low is the interrupt low threshold, high is the interrupt high threshold.
+
+   ```shell
+   tsl2561 (-e int | --example=int) [--addr=<VCC | GND | FLOAT>] [--times=<num>] [--mode=<m>] [--low-threshold=<low>] [--high-threshold=<high>]
+   ```
 
 #### 3.2 Command Example
 
@@ -77,7 +115,7 @@ tsl2561: INT connected to GPIOB PIN0.
 ```
 
 ```shell
-tsl2561 -t reg -a FLOAT
+tsl2561 -t reg --addr=FLOAT
 
 tsl2561: chip is AMS TSL2561.
 tsl2561: manufacturer is AMS.
@@ -149,16 +187,16 @@ tsl2561: check interrupt mode ok.
 tsl2561: set interrupt mode 15 interation time out of range.
 tsl2561: check interrupt mode ok.
 tsl2561: tsl2561_set_interrupt_high_threshold/tsl2561_get_interrupt_high_threshold test.
-tsl2561: set interrupt high threshold 31561.
+tsl2561: set interrupt high threshold 41136.
 tsl2561: check interrupt high threshold ok.
 tsl2561: tsl2561_set_interrupt_low_threshold/tsl2561_get_interrupt_low_threshold test.
-tsl2561: set interrupt low threshold 55400.
+tsl2561: set interrupt low threshold 8651.
 tsl2561: check interrupt low threshold ok.
 tsl2561: finished register test.
 ```
 
 ```shell
-tsl2561 -t read 3 -a FLOAT
+tsl2561 -t read --addr=FLOAT --times=3
 
 tsl2561: chip is AMS TSL2561.
 tsl2561: manufacturer is AMS.
@@ -172,35 +210,35 @@ tsl2561: min temperature is -40.0C.
 tsl2561: start read test.
 tsl2561: set gain 1.
 tsl2561: set integration time 13 ms.
-tsl2561: read lux 55.
-tsl2561: read lux 55.
-tsl2561: read lux 55.
+tsl2561: read lux 288.
+tsl2561: read lux 288.
+tsl2561: read lux 288.
 tsl2561: set integration time 101 ms.
-tsl2561: read lux 62.
-tsl2561: read lux 62.
-tsl2561: read lux 62.
+tsl2561: read lux 283.
+tsl2561: read lux 283.
+tsl2561: read lux 283.
 tsl2561: set integration time 402 ms.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
+tsl2561: read lux 283.
+tsl2561: read lux 283.
+tsl2561: read lux 283.
 tsl2561: set gain 16.
 tsl2561: set integration time 13 ms.
-tsl2561: read lux 60.
-tsl2561: read lux 62.
-tsl2561: read lux 60.
+tsl2561: read lux 282.
+tsl2561: read lux 281.
+tsl2561: read lux 281.
 tsl2561: set integration time 101 ms.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
+tsl2561: read lux 281.
+tsl2561: read lux 281.
+tsl2561: read lux 281.
 tsl2561: set integration time 402 ms.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
-tsl2561: read lux 61.
+tsl2561: read lux 281.
+tsl2561: read lux 281.
+tsl2561: read lux 281.
 tsl2561: finish read test.
 ```
 
 ```shell
-tsl2561 -t int 3 -a FLOAT -m 0 -th 10 100
+tsl2561 -t int --addr=FLOAT --times=3 --mode=00 --low-threshold=10 --high-threshold=100
 
 tsl2561: set interrupt mode TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE.
 tsl2561: chip is AMS TSL2561.
@@ -213,57 +251,59 @@ tsl2561: max current is 0.60mA.
 tsl2561: max temperature is 85.0C.
 tsl2561: min temperature is -40.0C.
 tsl2561: start interrupt test.
-tsl2561: irq.
-tsl2561: read 0x021D and check interrupt.
-tsl2561: irq.
-tsl2561: read 0x021C and check interrupt.
-tsl2561: irq.
-tsl2561: read 0x0222 and check interrupt.
+tsl2561: read 0x09DC and check interrupt.
+tsl2561: read 0x09DC and check interrupt.
+tsl2561: read 0x09E1 and check interrupt.
 tsl2561: finish interrupt test.
 ```
 
 ```shell
-tsl2561 -c read 3 -a FLOAT
+tsl2561 -e read --addr=FLOAT --times=3
 
 tsl2561: 1/3.
-tsl2561: read is 67 lux.
+tsl2561: read is 281 lux.
 tsl2561: 2/3.
-tsl2561: read is 65 lux.
+tsl2561: read is 281 lux.
 tsl2561: 3/3.
-tsl2561: read is 66 lux.
+tsl2561: read is 281 lux.
 ```
 
 ```shell
-tsl2561 -c int 3 -a FLOAT -m 3 -th 10 100
+tsl2561 -e int --addr=FLOAT --times=3 --mode=00 --low-threshold=10 --high-threshold=100
 
-tsl2561: set interrupt mode TSL2561_INTERRUPT_MODE_3_INTEGRATION_TIME_OUT_OF_RANGE.
+tsl2561: set interrupt mode TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE.
 tsl2561: 1/3.
-tsl2561: read is 156 lux.
-tsl2561: 2/3.
-tsl2561: read is 159 lux.
-tsl2561: 3/3.
-tsl2561: read is 158 lux.
+tsl2561: read is 281 lux.
 tsl2561: find interrupt.
 ```
 
 ```shell
 tsl2561 -h
 
-tsl2561 -i
-	show tsl2561 chip and driver information.
-tsl2561 -h
-	show tsl2561 help.
-tsl2561 -p
-	show tsl2561 pin connections of the current board.
-tsl2561 -t reg -a (VCC | GND | FLOAT)
-	run tsl2561 register test.
-tsl2561 -t read <times> -a (VCC | GND | FLOAT)
-	run tsl2561 read test.times is test times.
-tsl2561 -t int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>
-	run tsl2561 interrupt test.times is test times.mode is the interrupt mode and it can be "0"-"15".lowthreshold is interrupt low threshold.highthreshold is interrupt high threshold.
-tsl2561 -c read <times> -a (VCC | GND | FLOAT)
-	run tsl2561 read function.times is read times.
-tsl2561 -c int <times> -a (VCC | GND | FLOAT) -m <mode> -th <lowthreshold> <highthreshold>
-	run tsl2561 interrupt function.times is read times.mode is the interrupt mode and it can be "0"-"15".lowthreshold is interrupt low threshold.highthreshold is interrupt high threshold.
+Usage:
+  tsl2561 (-i | --information)
+  tsl2561 (-h | --help)
+  tsl2561 (-p | --port)
+  tsl2561 (-t reg | --test=reg) [--addr=<VCC | GND | FLOAT>]
+  tsl2561 (-t read | --test=read) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+  tsl2561 (-t int | --test=int) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+          [--mode=<m>] [--low-threshold=<low>] [--high-threshold=<high>]
+  tsl2561 (-e read | --example=read) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+  tsl2561 (-e int | --example=int) [--addr=<VCC | GND | FLOAT>] [--times=<num>]
+          [--mode=<m>] [--low-threshold=<low>] [--high-threshold=<high>]
+
+Options:
+      --addr=<VCC | GND | FLOAT>    Set the addr pin.([default: FLOAT])
+  -e <read | int>, --example=<read | int>
+                                    Run the driver example.
+  -h, --help                        Show the help.
+      --high-threshold=<high>       Set the interrupt high threshold.([default: 100])
+  -i, --information                 Show the chip information.
+      --low-threshold=<low>         Set the interrupt low threshold.([default: 10])
+      --mode=<m>                    Set the interrupt mode and it can be "00" - "15".([default: 00])
+  -p, --port                        Display the pin connections of the current board.
+  -t <reg | read | int>, --test=<reg | read | int>
+                                    Run the driver test.
+      --times=<num>                 Set the running times.([default: 3])
 ```
 

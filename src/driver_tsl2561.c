@@ -473,7 +473,7 @@ uint8_t tsl2561_set_gain(tsl2561_handle_t *handle, tsl2561_gain_t gain)
 /**
  * @brief      get the adc gain
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *gain points to a adc gain buffer
+ * @param[out] *gain points to an adc gain buffer
  * @return     status code
  *             - 0 success
  *             - 1 get gain failed
@@ -553,7 +553,7 @@ uint8_t tsl2561_set_integration_time(tsl2561_handle_t *handle, tsl2561_integrati
 /**
  * @brief      get the integration time
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *t points to a integration time buffer
+ * @param[out] *t points to an integration time buffer
  * @return     status code
  *             - 0 success
  *             - 1 get integration time failed
@@ -633,7 +633,7 @@ uint8_t tsl2561_set_interrupt_mode(tsl2561_handle_t *handle, tsl2561_interrupt_m
 /**
  * @brief      get the interrupt mode
  * @param[in]  *handle points to a tsl2561 handle structure
- * @param[out] *mode points to a interrupt mode buffer
+ * @param[out] *mode points to an interrupt mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt mode failed

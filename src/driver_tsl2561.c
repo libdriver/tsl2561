@@ -54,10 +54,10 @@
  */
 #define TSL2561_REG_CONTROL               0x80        /**< control register */
 #define TSL2561_REG_TIMING                0x81        /**< timing register */
-#define TSL2561_REG_THRESHLOWLOW          0xA2        /**< threshlow low register */
-#define TSL2561_REG_THRESHLOWHIGH         0xA3        /**< threshlow high register */
-#define TSL2561_REG_THRESHHIGHLOW         0xA4        /**< threshhigh low register */
-#define TSL2561_REG_THRESHHIGHHIGH        0xA5        /**< threshhigh high register */
+#define TSL2561_REG_THRESHLOWLOW          0xA2        /**< thresh-low low register */
+#define TSL2561_REG_THRESHLOWHIGH         0xA3        /**< thresh-low high register */
+#define TSL2561_REG_THRESHHIGHLOW         0xA4        /**< thresh-high low register */
+#define TSL2561_REG_THRESHHIGHHIGH        0xA5        /**< thresh-high high register */
 #define TSL2561_REG_INTERRUPT             0x86        /**< interrupt register */
 #define TSL2561_REG_ID                    0x8A        /**< id register */
 #define TSL2561_REG_DATA0LOW              0xEC        /**< data 0 low register */
@@ -151,7 +151,7 @@ static uint32_t a_tsl2561_calculate_lux(uint16_t gain, uint16_t t, uint16_t ch0,
     channel_1 = (ch1 * ch_scale) >> TSL2561_LUX_CHSCALE;                     /* set channel 1 */
     if (channel_0 != 0)                                                      /* check channel 0 */
     {
-        ratio1 = (channel_1<<(TSL2561_LUX_RATIOSCALE+1)) / channel_0;        /* get ratiol */
+        ratio1 = (channel_1<<(TSL2561_LUX_RATIOSCALE+1)) / channel_0;        /* get ratio */
     }
     ratio = (ratio1 + 1) >> 1;                                               /* right shift 1 */
     if ((ratio > 0) && (ratio <= TSL2561_LUX_K1T))                           /* if K1T */
@@ -307,7 +307,7 @@ uint8_t tsl2561_deinit(tsl2561_handle_t *handle)
     }
     if (handle->inited != 1)                                                                 /* check handle initialization */
     {
-        return 3;                                                                            /* return eror */
+        return 3;                                                                            /* return error */
     }   
     
     reg = TSL2561_CONTROL_POWEROFF;                                                          /* set power down command */
@@ -1062,7 +1062,7 @@ uint8_t tsl2561_info(tsl2561_info_t *info)
     info->max_current_ma = MAX_CURRENT;                             /* set maximum current */
     info->temperature_max = TEMPERATURE_MAX;                        /* set minimal temperature */
     info->temperature_min = TEMPERATURE_MIN;                        /* set maximum temperature */
-    info->driver_version = DRIVER_VERSION;                          /* set driver verison */
+    info->driver_version = DRIVER_VERSION;                          /* set driver version */
     
     return 0;                                                       /* success return 0 */
 }

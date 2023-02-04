@@ -105,7 +105,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 5},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     tsl2561_address_t addr = TSL2561_ADDRESS_FLOAT;
     tsl2561_interrupt_mode_t mode = TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE;
@@ -564,7 +564,7 @@ int main(void)
     /* uart init */
     uart_init(115200);
     
-    /* shell init && register tsl2561 fuction */
+    /* shell init && register tsl2561 function */
     shell_init();
     shell_register("tsl2561", tsl2561);
     uart_print("tsl2561: welcome to libdriver tsl2561.\n");
@@ -587,7 +587,7 @@ int main(void)
             }
             else if (res == 2)
             {
-                uart_print("tsl2561: unknow command.\n");
+                uart_print("tsl2561: unknown command.\n");
             }
             else if (res == 3)
             {
@@ -603,7 +603,7 @@ int main(void)
             }
             else
             {
-                uart_print("tsl2561: unknow status code.\n");
+                uart_print("tsl2561: unknown status code.\n");
             }
             uart_flush();
         }

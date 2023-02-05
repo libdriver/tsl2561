@@ -382,7 +382,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_ANY_VALUE_OUT_OF_THRESHOLD_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 2 interation time out of range */
+    /* set interrupt mode 2 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_2_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -391,7 +391,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 2 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 2 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -402,7 +402,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_2_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 3 interation time out of range */
+    /* set interrupt mode 3 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_3_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -411,7 +411,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 3 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 3 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -422,7 +422,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_3_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 4 interation time out of range */
+    /* set interrupt mode 4 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_4_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -431,7 +431,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 4 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 4 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -442,7 +442,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_4_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 5 interation time out of range */
+    /* set interrupt mode 5 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_5_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -451,7 +451,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 5 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 5 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -462,7 +462,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_5_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 6 interation time out of range */
+    /* set interrupt mode 6 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_6_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -471,7 +471,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 6 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 6 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -482,7 +482,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_6_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 7 interation time out of range */
+    /* set interrupt mode 7 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_7_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -491,7 +491,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 7 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 7 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -502,7 +502,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_7_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 8 interation time out of range */
+    /* set interrupt mode 8 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_8_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -511,7 +511,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 8 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 8 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -522,7 +522,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_8_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 9 interation time out of range */
+    /* set interrupt mode 9 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_9_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -531,7 +531,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 9 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 9 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -542,7 +542,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_9_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 10 interation time out of range */
+    /* set interrupt mode 10 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_10_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -551,7 +551,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 10 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 10 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -562,7 +562,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_10_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 11 interation time out of range */
+    /* set interrupt mode 11 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_11_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -571,7 +571,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 11 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 11 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -582,7 +582,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_11_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 12 interation time out of range */
+    /* set interrupt mode 12 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_12_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -591,7 +591,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 12 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 12 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -602,7 +602,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_12_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 13 interation time out of range */
+    /* set interrupt mode 13 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_13_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -611,7 +611,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 13 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 13 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -622,7 +622,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_13_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 14 interation time out of range */
+    /* set interrupt mode 14 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_14_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -631,7 +631,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 14 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 14 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {
@@ -642,7 +642,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
     }
     tsl2561_interface_debug_print("tsl2561: check interrupt mode %s.\n", mode == TSL2561_INTERRUPT_MODE_14_INTEGRATION_TIME_OUT_OF_RANGE ? "ok" : "error");
     
-    /* set interrupt mode 15 interation time out of range */
+    /* set interrupt mode 15 integration time out of range */
     res = tsl2561_set_interrupt_mode(&gs_handle, TSL2561_INTERRUPT_MODE_15_INTEGRATION_TIME_OUT_OF_RANGE);
     if (res != 0)
     {
@@ -651,7 +651,7 @@ uint8_t tsl2561_register_test(tsl2561_address_t addr)
         
         return 1;
     }
-    tsl2561_interface_debug_print("tsl2561: set interrupt mode 15 interation time out of range.\n");
+    tsl2561_interface_debug_print("tsl2561: set interrupt mode 15 integration time out of range.\n");
     res = tsl2561_get_interrupt_mode(&gs_handle, &mode);
     if (res != 0)
     {

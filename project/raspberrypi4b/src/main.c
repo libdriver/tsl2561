@@ -77,7 +77,7 @@ uint8_t tsl2561(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 5},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     tsl2561_address_t addr = TSL2561_ADDRESS_FLOAT;
     tsl2561_interrupt_mode_t mode = TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE;
@@ -546,7 +546,7 @@ int main(uint8_t argc, char **argv)
     }
     else
     {
-        tsl2561_interface_debug_print("tsl2561: unknow status code.\n");
+        tsl2561_interface_debug_print("tsl2561: unknown status code.\n");
     }
 
     return 0;

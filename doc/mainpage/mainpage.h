@@ -1,6 +1,6 @@
 /**
  * @mainpage  LibDriver TSL2561
- * @brief     libdriver tsl2561 is a full function driver of tsl2561 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver TSL2561 is a full function driver of TSL2561 and it can run in both MCU and Linux platform.
  * @version   2.0.0
  * @author    Shifeng Li
  *

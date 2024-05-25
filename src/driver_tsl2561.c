@@ -268,14 +268,8 @@ uint8_t tsl2561_init(tsl2561_handle_t *handle)
         
         return 1;                                                                       /* return error */
     }
-    if (id == 0x10)                                                                     /* check id */
-    {
-        handle->debug_print("tsl2561: not support this series.\n");                     /* not support this series */
-        (void)handle->iic_deinit();                                                     /* iic deinit */
-        
-        return 1;                                                                       /* return error */
-    }
-    if (id != 0x50)                                                                     /* check id */
+    id &= ~0xF;                                                                         /* get id part */
+    if (!(id == 0x10 || id == 0x50))                                                    /* check id */
     {
         handle->debug_print("tsl2561: id is error.\n");                                 /* id is error */
         (void)handle->iic_deinit();                                                     /* iic deinit */

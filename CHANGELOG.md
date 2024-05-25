@@ -1,3 +1,9 @@
+## 2.0.1 (2024-05-25)
+
+## Fixes
+
+- fix id checking bugs
+
 ## 2.0.0 (2021-02-26)
 
 ## Features

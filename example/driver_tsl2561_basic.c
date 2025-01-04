@@ -41,7 +41,7 @@ static tsl2561_handle_t gs_handle;        /**< tsl2561 handle */
 
 /**
  * @brief     basic example init
- * @param[in] addr_pin is the iic device address
+ * @param[in] addr_pin iic device address
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -153,7 +153,7 @@ uint8_t tsl2561_basic_init(tsl2561_address_t addr_pin)
 
 /**
  * @brief      basic example read
- * @param[out] *lux points to a lux buffer
+ * @param[out] *lux pointer to a lux buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

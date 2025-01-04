@@ -335,7 +335,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -381,8 +381,8 @@ Functions</h2></td></tr>
 <p>get the iic address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>points to a chip iic address pin buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*addr_pin</td><td>pointer to a chip iic address pin buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -427,8 +427,8 @@ Functions</h2></td></tr>
 <p>get the adc gain </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*gain</td><td>points to an adc gain buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*gain</td><td>pointer to an adc gain buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -473,8 +473,8 @@ Functions</h2></td></tr>
 <p>get the integration time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*t</td><td>points to an integration time buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*t</td><td>pointer to an integration time buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -509,7 +509,7 @@ Functions</h2></td></tr>
 <p>get chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to a tsl2561 info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to a tsl2561 info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -543,7 +543,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -579,7 +579,7 @@ Functions</h2></td></tr>
 <p>power down the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -637,10 +637,10 @@ Functions</h2></td></tr>
 <p>read data from the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*channel_0_raw</td><td>points to a channel 0 raw data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*channel_1_raw</td><td>points to a channel 1 raw data </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*lux</td><td>points to a converted lux </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*channel_0_raw</td><td>pointer to a channel 0 raw data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*channel_1_raw</td><td>pointer to a channel 1 raw data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*lux</td><td>pointer to a converted lux </td></tr>
   </table>
   </dd>
 </dl>
@@ -686,8 +686,8 @@ Functions</h2></td></tr>
 <p>set the iic address pin </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>is the chip iic address pin </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr_pin</td><td>chip iic address pin </td></tr>
   </table>
   </dd>
 </dl>
@@ -732,8 +732,8 @@ Functions</h2></td></tr>
 <p>set the adc gain </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">gain</td><td>is the adc gain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gain</td><td>adc gain </td></tr>
   </table>
   </dd>
 </dl>
@@ -778,8 +778,8 @@ Functions</h2></td></tr>
 <p>set the integration time </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>is the integration time </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>integration time </td></tr>
   </table>
   </dd>
 </dl>
@@ -814,7 +814,7 @@ Functions</h2></td></tr>
 <p>wake up the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a tsl2561 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a tsl2561 handle structure </td></tr>
   </table>
   </dd>
 </dl>

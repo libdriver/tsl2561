@@ -41,10 +41,10 @@ static tsl2561_handle_t gs_handle;        /**< tsl2561 handle */
 
 /**
  * @brief     interrupt example init
- * @param[in] addr_pin is the iic device address
- * @param[in] mode is the interrupt mode
- * @param[in] ch0_low_threshold is the channel 0 interrupt low threshold
- * @param[in] ch0_high_threshold is the channel 0 interrupt high threshold
+ * @param[in] addr_pin iic device address
+ * @param[in] mode interrupt mode
+ * @param[in] ch0_low_threshold channel 0 interrupt low threshold
+ * @param[in] ch0_high_threshold channel 0 interrupt high threshold
  * @return    status code
  *            - 0 success
  *            - 1 init failed
@@ -157,7 +157,7 @@ uint8_t tsl2561_interrupt_init(tsl2561_address_t addr_pin, tsl2561_interrupt_mod
 
 /**
  * @brief      interrupt example read
- * @param[out] *lux points to a lux buffer
+ * @param[out] *lux pointer to a lux buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

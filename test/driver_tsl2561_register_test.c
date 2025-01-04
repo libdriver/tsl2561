@@ -42,7 +42,7 @@ static tsl2561_handle_t gs_handle;        /**< tsl2561 handle */
 
 /**
  * @brief     register test
- * @param[in] addr is the iic device address
+ * @param[in] addr iic device address
  * @return    status code
  *            - 0 success
  *            - 1 test failed

@@ -351,5 +351,5 @@ uint8_t tsl2561_read_test(tsl2561_address_t addr_pin, uint32_t times)
     tsl2561_interface_debug_print("tsl2561: finish read test.\n");
     (void)tsl2561_deinit(&gs_handle);
     
-    return 0;                                                                                                                                     //success return 0
+    return 0;
 }

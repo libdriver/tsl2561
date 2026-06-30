@@ -885,7 +885,7 @@ uint8_t tsl2561_get_interrupt_low_threshold(tsl2561_handle_t *handle, uint16_t *
     }
     *ch0_raw = ((uint16_t)buf[1] << 8) | buf[0];                                                  /* get ch0 raw */
     
-    return 0;                                                                                     /* return error */
+    return 0;                                                                                     /* success return 0 */
 }
 
 /**

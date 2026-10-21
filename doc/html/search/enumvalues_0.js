@@ -25,5 +25,7 @@ var searchData=
   ['tsl2561_5finterrupt_5fmode_5f8_5fintegration_5ftime_5fout_5fof_5frange_22',['TSL2561_INTERRUPT_MODE_8_INTEGRATION_TIME_OUT_OF_RANGE',['../group__tsl2561__interrupt__driver.html#gga9958341057e24c4797a0630174874802ac3af0d123ca935b93c9408b8e2127a83',1,'driver_tsl2561.h']]],
   ['tsl2561_5finterrupt_5fmode_5f9_5fintegration_5ftime_5fout_5fof_5frange_23',['TSL2561_INTERRUPT_MODE_9_INTEGRATION_TIME_OUT_OF_RANGE',['../group__tsl2561__interrupt__driver.html#gga9958341057e24c4797a0630174874802a214c3fda232a36475bd5e0b36c1fe9b8',1,'driver_tsl2561.h']]],
   ['tsl2561_5finterrupt_5fmode_5fany_5fvalue_5fout_5fof_5fthreshold_5frange_24',['TSL2561_INTERRUPT_MODE_ANY_VALUE_OUT_OF_THRESHOLD_RANGE',['../group__tsl2561__interrupt__driver.html#gga9958341057e24c4797a0630174874802aa4feffeb6c4f2f8262885cc9ac8c070b',1,'driver_tsl2561.h']]],
-  ['tsl2561_5finterrupt_5fmode_5fevery_5fadc_5fcycle_25',['TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE',['../group__tsl2561__interrupt__driver.html#gga9958341057e24c4797a0630174874802a111a031e8869c522f32b7664eb3faa42',1,'driver_tsl2561.h']]]
+  ['tsl2561_5finterrupt_5fmode_5fevery_5fadc_5fcycle_25',['TSL2561_INTERRUPT_MODE_EVERY_ADC_CYCLE',['../group__tsl2561__interrupt__driver.html#gga9958341057e24c4797a0630174874802a111a031e8869c522f32b7664eb3faa42',1,'driver_tsl2561.h']]],
+  ['tsl2561_5fpackage_5fcs_26',['TSL2561_PACKAGE_CS',['../driver__tsl2561_8c.html#a1eba41574a6b06664aa7ee24c856c1f3a61f52d499b95e0ffc56757571bb335b0',1,'driver_tsl2561.c']]],
+  ['tsl2561_5fpackage_5ft_5ffn_5fcl_27',['TSL2561_PACKAGE_T_FN_CL',['../driver__tsl2561_8c.html#a1eba41574a6b06664aa7ee24c856c1f3af3720a63a451b8d88bf443384b3e826f',1,'driver_tsl2561.c']]]
 ];

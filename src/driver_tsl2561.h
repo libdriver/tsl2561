@@ -90,7 +90,7 @@ typedef enum
  */
 typedef enum
 {
-    TSL2561_INTEGRATION_TIME_13MS  = 0x00,        /**< 13 ms integration time */
+    TSL2561_INTEGRATION_TIME_13MS  = 0x00,        /**< 13.7 ms integration time */
     TSL2561_INTEGRATION_TIME_101MS = 0x01,        /**< 101 ms integration time */
     TSL2561_INTEGRATION_TIME_402MS = 0x02,        /**< 402 ms integration time */
 } tsl2561_integration_time_t;
@@ -148,6 +148,7 @@ typedef struct tsl2561_handle_s
     uint8_t (*iic_write)(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len);        /**< point to an iic_write function address */
     void (*delay_ms)(uint32_t ms);                                                      /**< point to a delay_ms function address */
     void (*debug_print)(const char *const fmt, ...);                                    /**< point to a debug_print function address */
+    uint8_t package;                                                                    /**< package */
     uint8_t inited;                                                                     /**< inited flag */
 } tsl2561_handle_t;
 

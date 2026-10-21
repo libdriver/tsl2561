@@ -99,11 +99,45 @@
 #define TSL2561_LUX_K8T                  0x029AU       /**< 1.3 * 2^RATIO_SCALE */
 #define TSL2561_LUX_B8T                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
 #define TSL2561_LUX_M8T                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
+#define TSL2561_LUX_K1C                  0x0043U       /**< 0.130 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B1C                  0x0204U       /**< 0.0315 * 2^LUX_SCALE */
+#define TSL2561_LUX_M1C                  0x01ADU       /**< 0.0262 * 2^LUX_SCALE */
+#define TSL2561_LUX_K2C                  0x0085U       /**< 0.260 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B2C                  0x0228U       /**< 0.0337 * 2^LUX_SCALE */
+#define TSL2561_LUX_M2C                  0x02C1U       /**< 0.0430 * 2^LUX_SCALE */
+#define TSL2561_LUX_K3C                  0x00C8U       /**< 0.390 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B3C                  0x0253U       /**< 0.0363 * 2^LUX_SCALE */
+#define TSL2561_LUX_M3C                  0x0363U       /**< 0.0529 * 2^LUX_SCALE */
+#define TSL2561_LUX_K4C                  0x010AU       /**< 0.520 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B4C                  0x0282U       /**< 0.0392 * 2^LUX_SCALE */
+#define TSL2561_LUX_M4C                  0x03DFU       /**< 0.0605 * 2^LUX_SCALE */
+#define TSL2561_LUX_K5C                  0x014DU       /**< 0.65 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B5C                  0x0177U       /**< 0.0229 * 2^LUX_SCALE */
+#define TSL2561_LUX_M5C                  0x01DDU       /**< 0.0291 * 2^LUX_SCALE */
+#define TSL2561_LUX_K6C                  0x019AU       /**< 0.80 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B6C                  0x0101U       /**< 0.0157 * 2^LUX_SCALE */
+#define TSL2561_LUX_M6C                  0x0127U       /**< 0.0180 * 2^LUX_SCALE */
+#define TSL2561_LUX_K7C                  0x029AU       /**< 1.3 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B7C                  0x0037U       /**< 0.00338 * 2^LUX_SCALE */
+#define TSL2561_LUX_M7C                  0x002BU       /**< 0.00260 * 2^LUX_SCALE */
+#define TSL2561_LUX_K8C                  0x029AU       /**< 1.3 * 2^RATIO_SCALE */
+#define TSL2561_LUX_B8C                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
+#define TSL2561_LUX_M8C                  0x0000U       /**< 0.000 * 2^LUX_SCALE */
 #define TSL2561_GAIN_0X                  0x00          /**< gain 0x */
 #define TSL2561_GAIN_16X                 0x10          /**< gain 16x */
 
 /**
+ * @brief tsl2561 package enumeration definition
+ */
+typedef enum
+{
+    TSL2561_PACKAGE_T_FN_CL = 0x00,        /**< T, FN and CL package */
+    TSL2561_PACKAGE_CS      = 0x01,        /**< CS package */
+} tsl2561_package_t;
+
+/**
  * @brief     calculate the lux
+ * @param[in] package chip package
  * @param[in] gain adc gain
  * @param[in] t integration time
  * @param[in] ch0 channel 0 raw data
@@ -111,7 +145,7 @@
  * @return    calculated lux
  * @note      none
  */
-static uint32_t a_tsl2561_calculate_lux(uint16_t gain, uint16_t t, uint16_t ch0, uint16_t ch1)
+static uint32_t a_tsl2561_calculate_lux(uint16_t package, uint16_t gain, uint16_t t, uint16_t ch0, uint16_t ch1)
 {
     uint32_t ch_scale;
     uint32_t channel_1;
@@ -154,48 +188,99 @@ static uint32_t a_tsl2561_calculate_lux(uint16_t gain, uint16_t t, uint16_t ch0,
         ratio1 = (channel_1<<(TSL2561_LUX_RATIOSCALE+1)) / channel_0;        /* get ratio */
     }
     ratio = (ratio1 + 1) >> 1;                                               /* right shift 1 */
-    if ((ratio > 0) && (ratio <= TSL2561_LUX_K1T))                           /* if K1T */
+    if (package == TSL2561_PACKAGE_CS)                                       /* choose CS package */
     {
-        b = TSL2561_LUX_B1T;                                                 /* set B1T */
-        m = TSL2561_LUX_M1T;                                                 /* set M1T */
+        if (ratio <= TSL2561_LUX_K1C)                                        /* if K1C */
+        {
+            b = TSL2561_LUX_B1C;                                             /* set B1C */
+            m = TSL2561_LUX_M1C;                                             /* set M1C */
+        }
+        else if (ratio <= TSL2561_LUX_K2C)                                   /* if K2C */
+        {
+            b = TSL2561_LUX_B2C;                                             /* set B2C */
+            m = TSL2561_LUX_M2C;                                             /* set M2C */
+        }
+        else if (ratio <= TSL2561_LUX_K3C)                                   /* if K3C */
+        {
+            b = TSL2561_LUX_B3C;                                             /* set B3C */
+            m = TSL2561_LUX_M3C;                                             /* set M3C */
+        }
+        else if (ratio <= TSL2561_LUX_K4C)                                   /* if K4C */
+        {
+            b = TSL2561_LUX_B4C;                                             /* set B4C */
+            m = TSL2561_LUX_M4C;                                             /* set M4C */
+        }
+        else if (ratio <= TSL2561_LUX_K5C)                                   /* if K5C */
+        {
+            b = TSL2561_LUX_B5C;                                             /* set B5C */
+            m = TSL2561_LUX_M5C;                                             /* set M5C */
+        }
+        else if (ratio <= TSL2561_LUX_K6C)                                   /* if K6C */
+        {
+            b = TSL2561_LUX_B6C;                                             /* set B6C */
+            m = TSL2561_LUX_M6C;                                             /* set M6C */
+        }
+        else if (ratio <= TSL2561_LUX_K7C)                                   /* if K7C */
+        {
+            b = TSL2561_LUX_B7C;                                             /* set B7C */
+            m = TSL2561_LUX_M7C;                                             /* set M7C */
+        }
+        else                                                                 /* if K8C */
+        {
+            b = TSL2561_LUX_B8C;                                             /* set B8C */
+            m = TSL2561_LUX_M8C;                                             /* set M8C */
+        }
     }
-    else if (ratio <= TSL2561_LUX_K2T)                                       /* if K2T */
+    else                                                                     /* T, FN and CL package */
     {
-        b = TSL2561_LUX_B2T;                                                 /* set B2T */
-        m = TSL2561_LUX_M2T;                                                 /* set M2T */
+        if (ratio <= TSL2561_LUX_K1T)                                        /* if K1T */
+        {
+            b = TSL2561_LUX_B1T;                                             /* set B1T */
+            m = TSL2561_LUX_M1T;                                             /* set M1T */
+        }
+        else if (ratio <= TSL2561_LUX_K2T)                                   /* if K2T */
+        {
+            b = TSL2561_LUX_B2T;                                             /* set B2T */
+            m = TSL2561_LUX_M2T;                                             /* set M2T */
+        }
+        else if (ratio <= TSL2561_LUX_K3T)                                   /* if K3T */
+        {
+            b = TSL2561_LUX_B3T;                                             /* set B3T */
+            m = TSL2561_LUX_M3T;                                             /* set M3T */
+        }
+        else if (ratio <= TSL2561_LUX_K4T)                                   /* if K4T */
+        {
+            b = TSL2561_LUX_B4T;                                             /* set B4T */
+            m = TSL2561_LUX_M4T;                                             /* set M4T */
+        }
+        else if (ratio <= TSL2561_LUX_K5T)                                   /* if K5T */
+        {
+            b = TSL2561_LUX_B5T;                                             /* set B5T */
+            m = TSL2561_LUX_M5T;                                             /* set M5T */
+        }
+        else if (ratio <= TSL2561_LUX_K6T)                                   /* if K6T */
+        {
+            b = TSL2561_LUX_B6T;                                             /* set B6T */
+            m = TSL2561_LUX_M6T;                                             /* set M6T */
+        }
+        else if (ratio <= TSL2561_LUX_K7T)                                   /* if K7T */
+        {
+            b = TSL2561_LUX_B7T;                                             /* set B7T */
+            m = TSL2561_LUX_M7T;                                             /* set M7T */
+        }
+        else                                                                 /* if K8T */
+        {
+            b = TSL2561_LUX_B8T;                                             /* set B8T */
+            m = TSL2561_LUX_M8T;                                             /* set M8T */
+        }
     }
-    else if (ratio <= TSL2561_LUX_K3T)                                       /* if K3T */
+    temp = channel_0 * b;                                                    /* get temp */
+    if (temp <= (channel_1 * m))                                             /* do not allow negative lux */
     {
-        b = TSL2561_LUX_B3T;                                                 /* set B3T */
-        m = TSL2561_LUX_M3T;                                                 /* set M3T */
+        return 0;                                                            /* return 0 */
     }
-    else if (ratio <= TSL2561_LUX_K4T)                                       /* if K4T */
-    {
-        b = TSL2561_LUX_B4T;                                                 /* set B4T */
-        m = TSL2561_LUX_M4T;                                                 /* set M4T */
-    }
-    else if (ratio <= TSL2561_LUX_K5T)                                       /* if K5T */
-    {
-        b = TSL2561_LUX_B5T;                                                 /* set B5T */
-        m = TSL2561_LUX_M5T;                                                 /* set M5T */
-    }
-    else if (ratio <= TSL2561_LUX_K6T)                                       /* if K6T */
-    {
-        b = TSL2561_LUX_B6T;                                                 /* set B6T */
-        m = TSL2561_LUX_M6T;                                                 /* set M6T */
-    }
-    else if (ratio <= TSL2561_LUX_K7T)                                       /* if K7T */
-    {
-        b = TSL2561_LUX_B7T;                                                 /* set B7T */
-        m = TSL2561_LUX_M7T;                                                 /* set M7T */
-    }
-    else                                                                     /* if K8T */
-    {
-        b = TSL2561_LUX_B8T;                                                 /* set B8T */
-        m = TSL2561_LUX_M8T;                                                 /* set M8T */
-    }
-    temp = ((channel_0 * b) - (channel_1 * m));                              /* get temp */
-    temp += (1 << (TSL2561_LUX_LUXSCALE - 1));                               /* 2^(temp-1) */
+    temp -= (channel_1 * m);                                                 /* subtract channel 1 */
+    temp += (1 << (TSL2561_LUX_LUXSCALE - 1));                               /* round lsb 2^(LUX_SCALE-1) */
     lux = temp >> TSL2561_LUX_LUXSCALE;                                      /* calculate lux */
     
     return lux;                                                              /* return lux */
@@ -269,7 +354,15 @@ uint8_t tsl2561_init(tsl2561_handle_t *handle)
         return 1;                                                                       /* return error */
     }
     id &= ~0xF;                                                                         /* get id part */
-    if (!(id == 0x10 || id == 0x50))                                                    /* check id */
+    if (id == 0x10)                                                                     /* cs package */
+    {
+        handle->package = (uint8_t)TSL2561_PACKAGE_CS;                                  /* set cs package */
+    }
+    else if (id == 0x50)                                                                /* t/fn/cl */
+    {
+        handle->package = (uint8_t)TSL2561_PACKAGE_T_FN_CL;                             /* set t/fn/cl package */
+    }
+    else
     {
         handle->debug_print("tsl2561: id is error.\n");                                 /* id is error */
         (void)handle->iic_deinit();                                                     /* iic deinit */
@@ -415,7 +508,8 @@ uint8_t tsl2561_read(tsl2561_handle_t *handle, uint16_t *channel_0_raw, uint16_t
         
         return 1;                                                                                          /* return error */
     }
-    *lux = a_tsl2561_calculate_lux((prev & 0x10) >> 4, prev & 0x03, *channel_0_raw, *channel_1_raw);       /* calculate lux */
+    *lux = a_tsl2561_calculate_lux(handle->package, (prev & 0x10) >> 4, prev & 0x03, 
+                                   *channel_0_raw, *channel_1_raw);                                        /* calculate lux */
     
     return 0;                                                                                              /* success return 0 */
 }
@@ -805,7 +899,7 @@ uint8_t tsl2561_get_interrupt_high_threshold(tsl2561_handle_t *handle, uint16_t 
     res = handle->iic_read(handle->iic_addr, TSL2561_REG_THRESHHIGHLOW, (uint8_t *)buf, 2);        /* read config */
     if (res != 0)                                                                                  /*check the result */
     {
-        handle->debug_print("tsl2561: write failed.\n");                                           /* write failed */
+        handle->debug_print("tsl2561: read failed.\n");                                            /* read failed */
         
         return 1;                                                                                  /* return error */
     }

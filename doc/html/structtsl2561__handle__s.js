@@ -7,5 +7,6 @@ var structtsl2561__handle__s =
     [ "iic_init", "structtsl2561__handle__s.html#a8826dd07625f8d90859ce9bd09628d61", null ],
     [ "iic_read", "structtsl2561__handle__s.html#af4ef726288b88f51a846483803a1249b", null ],
     [ "iic_write", "structtsl2561__handle__s.html#adca3ee7a793bbf510d5267daf0fcf1c5", null ],
-    [ "inited", "structtsl2561__handle__s.html#a19bedf28d2b9748f6a62d9ae93f4e68f", null ]
+    [ "inited", "structtsl2561__handle__s.html#a19bedf28d2b9748f6a62d9ae93f4e68f", null ],
+    [ "package", "structtsl2561__handle__s.html#a49e3fed637fe49cae276af936c131d08", null ]
 ];
